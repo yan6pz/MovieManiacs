@@ -1,0 +1,16 @@
+﻿<div ng-controller="AccountsController">
+    <div style="padding-left:60%; padding-right:20%; padding-bottom:2%">
+        <input class="form-control" autocomplete="on" ng-model="searchTextMyMovies">
+    </div>
+    <div ng-repeat="account in accounts | filter: searchTextMyMovies" ng-if="account.isFriend==1" style="width:80%;padding-left:30%; padding-bottom:1%;">
+        <div class="list-group-item list-group-item-info">
+            <img ng-src="{{ account.imageUrl}}" style="width:70px; height:70px;">
+            <div style="display:inline-block">{{account.firstName}}</div>
+            <div style="display:inline-block">{{account.lastName}}</div>
+            <div style="padding-right:10px; float:right; display:inline-block; padding-top:20px;">
+                <button type="button" class="btn btn-primary" ng-click="selectUser(account)">View Priofile</button>
+                <button type="button" class="btn btn-danger">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>

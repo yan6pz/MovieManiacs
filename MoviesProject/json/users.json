@@ -1,0 +1,42 @@
+﻿[
+{
+"id": 1,
+"firstName":"Tsvetina",
+"lastName":"Parvanova",
+"emails":"cvetina_pln_13@abv.bg",
+"imageUrl":"http://fotos0.mundofotos.net/2008/29_09_2008/kathe-the-one1222723297/twety.jpg",
+"isFriend":1
+},
+{
+"id": 2,
+"firstName":"Stoyan",
+"lastName":"Naydenov",
+"emails":"stoyan@abv.bg",
+"imageUrl":"http://static.comicvine.com/uploads/original/11117/111173617/4596727-wpid-voltron-wallpaper-3.jpg",
+"isFriend":1
+},
+{
+"id": 3,
+"firstName":"Elizabet",
+"lastName":"Gincheva",
+"emails":"elizabet@abv.bg",
+"imageUrl":"http://www.clipartbest.com/cliparts/yTk/4Rd/yTk4RdqEc.jpeg",
+"isFriend": 0
+},
+{
+"id": 4,
+"firstName":"Ivan",
+"lastName":"Ivanov",
+"emails":"ivan@abv.bg",
+"imageUrl":"http://www.picgifs.com/graphics/b/bugs-bunny/graphics-bugs-bunny-703756.gif",
+ "isFriend": 0
+},
+{
+"id": 5,
+"firstName":"Ivan",
+"lastName":"Ivanov",
+"emails":"ivan@abv.bg",
+"imageUrl":"http://www.picgifs.com/graphics/b/bugs-bunny/graphics-bugs-bunny-703756.gif",
+"isFriend": 1
+}
+]

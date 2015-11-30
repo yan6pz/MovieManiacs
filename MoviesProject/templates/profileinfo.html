@@ -1,0 +1,17 @@
+<div ng-controller="AddMovieController">
+    <div style="padding-left:30%; padding-bottom:2%">
+
+        <div class="list-group-item list-group-item-warning" style="width:50%;">
+
+            <img src="{{selectedUser.imageUrl}}" style="width:90px; height:115px" >
+            <label for="pwd" pwd" style="display: inline-block; width: 105px; text-align: right; ">First name:</label>
+            <span type="text"   id="usr">{{selectedUser.firstName}} </span><br />
+            <label for="pwd" pwd" style="display: inline-block; width: 200px; text-align: right; ">Last name:</label>
+            <span type="text"   id="usr">{{selectedUser.lastName}} </span><br />
+            <label for="usr" pwd" style="display: inline-block; width: 165px; text-align: right; padding-top:45px">Email:</label>
+            <span type="text"  id="usr">{{selectedUser.emails}} </span><br />
+        </div>
+        <div mymovie-details mymovie="myMovie" />
+
+    </div>
+</div>

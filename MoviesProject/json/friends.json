@@ -1,0 +1,31 @@
+﻿[
+{
+"id": 1,
+"firstName":"Tsvetina",
+"lastName":"Parvanova",
+"emails":"cvetina_pln_13@abv.bg"
+"isFriend": 1
+},
+{
+"id": 1,
+"firstName":"Stoyan",
+"lastName":"Naydenov",
+"emails":"stoyan@abv.bg"
+"isFriend": 1
+},
+{
+"id": 1,
+"firstName":"Elizabet",
+"lastName":"Gincheva",
+"emails":"elizabet@abv.bg"
+"isFriend": 0
+},
+},
+{
+"id": 1,
+"firstName":"Tsvetina",
+"lastName":"Parvanova",
+"emails":"cvetina_pln_13@abv.bg"
+"isFriend": 1
+},
+]

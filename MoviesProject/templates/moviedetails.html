@@ -1,0 +1,24 @@
+<div ng-controller ="AddMovieController">
+    <div  style="padding-left:30%; padding-bottom:2%">
+         
+        <div class="list-group-item list-group-item-info" style="width:60%;">
+            
+                <img src="{{selectedMovie.imageurl}}" style="width:90px; height:115px; ">
+                <h1 id="usr" style="display:inline-block; padding-left:30px">{{selectedMovie.title}}</h1>
+            <div>
+                <label for="pwd" style="display:block">Genre:</label>
+                <p id="usr">{{selectedMovie.genre}}</p>
+                <label for="pwd" >Year:</label>
+                <p id="usr">{{selectedMovie.Year}}</p>
+                <label for="pwd">Starring:</label>
+                <p id="usr">{{selectedMovie.starring}}</p>
+                <label for="pwd">Director:</label>
+                <p id="usr">{{selectedMovie.director}}</p>
+                <label for="pwd">Description:</label>
+                <p style="width:520px">{{selectedMovie.description}}</p>
+                        </div>
+        <div mymovie-details mymovie="myMovie" />
+        
+    </div>
+</div>
+</div>

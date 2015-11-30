@@ -1,0 +1,32 @@
+﻿<div ng-controller="AddMovieController">
+    <div style="padding-left:30%; padding-bottom:2%">
+
+        <div class="list-group-item list-group-item-success" style="width:60%;">
+
+            <img src="{{selectedMovie.imageurl}}" style="width:90px; height:115px; ">
+            <h1 id="usr" style="display:inline-block; padding-left:30px">{{selectedMovie.title}}</h1>
+            <div>
+                <label for="pwd" style="display:block">Genre:</label>
+                <p id="usr">{{selectedMovie.genre}}</p>
+                <label for="pwd">Year:</label>
+                <p id="usr">{{selectedMovie.Year}}</p>
+                <label for="pwd">Starring:</label>
+                <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+                        Friends:
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a>Tsvetina Parvanova</a></li>
+                        <li><a>Stoyan Naydenov</a></li>
+                    </ul>
+                </div>
+                <label for="pwd">Add opinion:</label><br />
+                <textarea name="Text1" style="width:520px; " rows="5"></textarea>
+                <button type="button" onclick="location.href = '/#/mymovies'" class="btn btn-success" style="width:100px;">Send</button>
+            </div>
+            <div mymovie-details mymovie="myMovie" />
+
+        </div>
+    </div>
+</div>

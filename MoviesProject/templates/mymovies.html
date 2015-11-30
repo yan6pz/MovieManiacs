@@ -1,0 +1,24 @@
+<div ng-controller="MyMoviesController">
+    <div style ="padding-left:60%; padding-right:20%; padding-bottom:2%">
+        <input class="form-control" autocomplete="on" ng-model="searchTextMyMovies">
+    </div>
+    <div  style="padding-left:30%; padding-bottom:2%" ng-repeat="myMovie in myMovies | filter: searchTextMyMovies">
+        <div class="list-group-item list-group-item-info" style="width:90%;">
+            <img ng-src="{{ myMovie.imageurl}}" class="imageMyMovies" style="height:200px; float:left">
+            <div style =" float:left; padding-left:10px; color:#1E90FF; font-family:Georgia; "><h2 ng-click="selectMovie(myMovie)"><a href="">{{ myMovie.title}}</a></h2></divstyle>
+            <div style="width:600px;">{{ myMovie.description }}</div>
+            <div style="width:600px;">Genre : {{ myMovie.genre }}</div>
+            <div style="width:600px;">Year : {{ myMovie.Year }}</div>
+            <div style="width:600px;">Rank : {{ myMovie.Rank }}</div>
+        </div>
+        <div mymovie-details mymovie="myMovie" />
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <a style="float:right" class="btn btn-default btn-sm" href="#/add">Add to "Watched"</a>
+                <p />
+            </div>
+        </div>
+    </div>
+</div>
+</div>

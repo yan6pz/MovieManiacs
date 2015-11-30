@@ -1,0 +1,27 @@
+﻿<div ng-controller="AddMovieController">
+    <div style="padding-left:30%; padding-bottom:2%">
+
+        <div class="list-group-item list-group-item-success" style="width:60%;">
+        <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+                Rank:
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a>1</a></li>
+                <li><a>2</a></li>
+                <li><a>3</a></li>
+                <li><a >4</a></li>
+                <li><a >5</a></li>
+            </ul>
+        </div>
+            <div>
+                <label for="pwd">Add opinion:</label><br />
+                <textarea name="Text1" style="width:520px; " rows="5"></textarea>
+                <button type="button" onclick="location.href = '/#/mymovies'" class="btn btn-success" style="width:100px;">Add</button>
+            </div>
+            <div mymovie-details mymovie="myMovie" />
+
+        </div>
+    </div>
+</div>
