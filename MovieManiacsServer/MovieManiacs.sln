@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManiacs", "MovieManiacs\MovieManiacs.csproj", "{FC20B7BB-F363-4ECD-A306-BFE0CDAD7067}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFDatabaseProvider", "WCFDatabaseProvider\WCFDatabaseProvider.csproj", "{BB1D6DA7-18A0-4F6C-9B7F-5B207294E9B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessEntities", "BusinessEntities\BusinessEntities.csproj", "{8BF0805E-0B7F-4CAA-BA13-688DE6AD2255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{012416CA-A329-4CEC-A60E-9EEC07F4053B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC20B7BB-F363-4ECD-A306-BFE0CDAD7067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC20B7BB-F363-4ECD-A306-BFE0CDAD7067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC20B7BB-F363-4ECD-A306-BFE0CDAD7067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC20B7BB-F363-4ECD-A306-BFE0CDAD7067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB1D6DA7-18A0-4F6C-9B7F-5B207294E9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB1D6DA7-18A0-4F6C-9B7F-5B207294E9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB1D6DA7-18A0-4F6C-9B7F-5B207294E9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB1D6DA7-18A0-4F6C-9B7F-5B207294E9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BF0805E-0B7F-4CAA-BA13-688DE6AD2255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BF0805E-0B7F-4CAA-BA13-688DE6AD2255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BF0805E-0B7F-4CAA-BA13-688DE6AD2255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BF0805E-0B7F-4CAA-BA13-688DE6AD2255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{012416CA-A329-4CEC-A60E-9EEC07F4053B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{012416CA-A329-4CEC-A60E-9EEC07F4053B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{012416CA-A329-4CEC-A60E-9EEC07F4053B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{012416CA-A329-4CEC-A60E-9EEC07F4053B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

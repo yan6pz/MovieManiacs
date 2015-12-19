@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MovieManiacsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Movies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MovieManiacs.dbo.UserFriends' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserFriends">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="FriendId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="FriendId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MovieManiacs.dbo.UserMovies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserMovies">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="MovieID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="MovieID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RegistrationDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_UserFriends_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserFriends" Type="Self.UserFriends" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserFriends">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserFriends_Users1">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserFriends" Type="Self.UserFriends" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserFriends">
+              <PropertyRef Name="FriendId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserMovies_Movies">
+          <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
+          <End Role="UserMovies" Type="Self.UserMovies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserMovies">
+              <PropertyRef Name="MovieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserMovies_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserMovies" Type="Self.UserMovies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserMovies">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MovieManiacsModelStoreContainer">
+          <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserFriends" EntityType="Self.UserFriends" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserFriends].[UserId] AS [UserId], 
+    [UserFriends].[FriendId] AS [FriendId]
+    FROM [dbo].[UserFriends] AS [UserFriends]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserMovies" EntityType="Self.UserMovies" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserMovies].[UserID] AS [UserID], 
+    [UserMovies].[MovieID] AS [MovieID]
+    FROM [dbo].[UserMovies] AS [UserMovies]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_UserFriends_Users" Association="Self.FK_UserFriends_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserFriends" EntitySet="UserFriends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserFriends_Users1" Association="Self.FK_UserFriends_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserFriends" EntitySet="UserFriends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserMovies_Movies" Association="Self.FK_UserMovies_Movies">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="UserMovies" EntitySet="UserMovies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserMovies_Users" Association="Self.FK_UserMovies_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserMovies" EntitySet="UserMovies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MovieManiacsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MovieManiacsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Movies" EntityType="MovieManiacsModel.Movies" />
+          <EntitySet Name="Users" EntityType="MovieManiacsModel.Users" />
+          <AssociationSet Name="UserFriends" Association="MovieManiacsModel.UserFriends">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Users1" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="UserMovies" Association="MovieManiacsModel.UserMovies">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Movies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="MovieManiacsModel.UserMovies" FromRole="Movies" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Users1" Relationship="MovieManiacsModel.UserFriends" FromRole="Users" ToRole="Users1" />
+          <NavigationProperty Name="Users2" Relationship="MovieManiacsModel.UserFriends" FromRole="Users1" ToRole="Users" />
+          <NavigationProperty Name="Movies" Relationship="MovieManiacsModel.UserMovies" FromRole="Users" ToRole="Movies" />
+        </EntityType>
+        <Association Name="UserFriends">
+          <End Type="MovieManiacsModel.Users" Role="Users" Multiplicity="*" />
+          <End Type="MovieManiacsModel.Users" Role="Users1" Multiplicity="*" />
+        </Association>
+        <Association Name="UserMovies">
+          <End Type="MovieManiacsModel.Movies" Role="Movies" Multiplicity="*" />
+          <End Type="MovieManiacsModel.Users" Role="Users" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MovieManiacsModelStoreContainer" CdmEntityContainer="MovieManiacsEntities">
+          <EntitySetMapping Name="Movies">
+            <EntityTypeMapping TypeName="MovieManiacsModel.Movies">
+              <MappingFragment StoreEntitySet="Movies">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MovieManiacsModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UserFriends" TypeName="MovieManiacsModel.UserFriends" StoreEntitySet="UserFriends">
+            <EndProperty Name="Users1">
+              <ScalarProperty Name="Id" ColumnName="FriendId" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="UserMovies" TypeName="MovieManiacsModel.UserMovies" StoreEntitySet="UserMovies">
+            <EndProperty Name="Users">
+              <ScalarProperty Name="Id" ColumnName="UserID" />
+            </EndProperty>
+            <EndProperty Name="Movies">
+              <ScalarProperty Name="Id" ColumnName="MovieID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

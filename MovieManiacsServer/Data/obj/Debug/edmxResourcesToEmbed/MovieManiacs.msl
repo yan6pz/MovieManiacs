@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MovieManiacsModelStoreContainer" CdmEntityContainer="MovieManiacsEntities">
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="MovieManiacsModel.Movies">
+        <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MovieManiacsModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UserFriends" TypeName="MovieManiacsModel.UserFriends" StoreEntitySet="UserFriends">
+      <EndProperty Name="Users1">
+        <ScalarProperty Name="Id" ColumnName="FriendId" />
+      </EndProperty>
+      <EndProperty Name="Users">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserMovies" TypeName="MovieManiacsModel.UserMovies" StoreEntitySet="UserMovies">
+      <EndProperty Name="Users">
+        <ScalarProperty Name="Id" ColumnName="UserID" />
+      </EndProperty>
+      <EndProperty Name="Movies">
+        <ScalarProperty Name="Id" ColumnName="MovieID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
