@@ -1,6 +1,0 @@
-c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\WCFDatabaseProvider\bin\WCFDatabaseProvider.dll.config
-c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\WCFDatabaseProvider\bin\WCFDatabaseProvider.dll
-c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\WCFDatabaseProvider\bin\WCFDatabaseProvider.pdb
-c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\WCFDatabaseProvider\obj\Debug\WCFDatabaseProvider.csprojResolveAssemblyReference.cache
-c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\WCFDatabaseProvider\obj\Debug\WCFDatabaseProvider.dll
-c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\WCFDatabaseProvider\obj\Debug\WCFDatabaseProvider.pdb

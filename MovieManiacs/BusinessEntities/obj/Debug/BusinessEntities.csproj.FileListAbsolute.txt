@@ -1,0 +1,5 @@
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\BusinessEntities\bin\Debug\BusinessEntities.dll
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\BusinessEntities\bin\Debug\BusinessEntities.pdb
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\BusinessEntities\obj\Debug\BusinessEntities.dll
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\BusinessEntities\obj\Debug\BusinessEntities.pdb
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\BusinessEntities\bin\Debug\BusinessEntities.dll.config

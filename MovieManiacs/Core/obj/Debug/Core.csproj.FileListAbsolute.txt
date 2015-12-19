@@ -1,0 +1,12 @@
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\bin\Debug\Core.dll.config
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\bin\Debug\Core.dll
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\bin\Debug\Core.pdb
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\bin\Debug\Data.dll
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\bin\Debug\EntityFramework.dll
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\bin\Debug\Data.pdb
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\bin\Debug\EntityFramework.xml
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\obj\Debug\Core.dll
+c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\Core\obj\Debug\Core.pdb
