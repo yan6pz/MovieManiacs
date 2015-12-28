@@ -10,3 +10,15 @@ c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\WCFDatabasePro
 c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\WCFDatabaseProvider\bin\EntityFramework.xml
 c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\WCFDatabaseProvider\bin\Core.dll
 c:\users\yanis\documents\visual studio 2015\Projects\MovieManiacs\WCFDatabaseProvider\bin\Core.pdb
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\bin\WCFDatabaseProvider.dll.config
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\bin\WCFDatabaseProvider.dll
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\bin\WCFDatabaseProvider.pdb
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\bin\Core.dll
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\bin\Data.dll
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\bin\EntityFramework.dll
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\bin\Core.pdb
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\bin\Data.pdb
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\bin\EntityFramework.xml
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\obj\Debug\WCFDatabaseProvider.csprojResolveAssemblyReference.cache
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\obj\Debug\WCFDatabaseProvider.dll
+C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\WCFDatabaseProvider\obj\Debug\WCFDatabaseProvider.pdb
