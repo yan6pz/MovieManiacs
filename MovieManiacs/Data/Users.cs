@@ -11,9 +11,7 @@ namespace Data
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
-    [DataContract]
+    
     public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,15 +21,12 @@ namespace Data
             this.Users2 = new HashSet<Users>();
             this.Movies = new HashSet<Movies>();
         }
-
-        [DataMember]
+    
         public int Id { get; set; }
-        [DataMember]
         public string UserName { get; set; }
         public System.Guid Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        [DataMember]
         public string Email { get; set; }
         public System.DateTime RegistrationDate { get; set; }
     

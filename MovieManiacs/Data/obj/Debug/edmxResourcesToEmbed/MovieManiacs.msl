@@ -4,6 +4,13 @@
     <EntitySetMapping Name="Movies">
       <EntityTypeMapping TypeName="MovieManiacsModel.Movies">
         <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="Starring" ColumnName="Starring" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>

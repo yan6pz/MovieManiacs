@@ -6,6 +6,13 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Year" Type="int" />
+    <Property Name="ReleaseDate" Type="datetime" />
+    <Property Name="ImageUrl" Type="nchar" MaxLength="2000" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="Genre" Type="nchar" MaxLength="1000" />
+    <Property Name="Description" Type="nchar" MaxLength="255" />
+    <Property Name="Starring" Type="nchar" MaxLength="255" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'MovieManiacs.dbo.UserFriends' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->

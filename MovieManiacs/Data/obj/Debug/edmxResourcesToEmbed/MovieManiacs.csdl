@@ -19,6 +19,13 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Users" Relationship="MovieManiacsModel.UserMovies" FromRole="Movies" ToRole="Users" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="ReleaseDate" Type="DateTime" Precision="3" />
+    <Property Name="ImageUrl" Type="String" MaxLength="2000" FixedLength="true" Unicode="true" />
+    <Property Name="Rank" Type="Int32" />
+    <Property Name="Genre" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Starring" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

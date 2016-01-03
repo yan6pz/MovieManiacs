@@ -16,4 +16,3 @@ C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\Data\bin\Debug\EntityFrame
 C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\Data\obj\Debug\Data.dll
 C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\Data\obj\Debug\Data.pdb
-C:\Users\Tsvetina\Documents\MovieManiacs\MovieManiacs\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
