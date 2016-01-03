@@ -18,7 +18,7 @@ namespace Core
         public User FindByUsername(string username)
         {
             var result= this.Context.Users.FirstOrDefault(u => u.UserName == username);
-            var user = new User() { Id = result.Id, Email = result.Email };
+            var user = new User() { Id = result.Id , UserName = result.UserName ,Password =result.Password, FirstName = result.FirstName ,LastName = result.LastName, Email = result.Email, RegistrationDate = result.RegistrationDate };
             return user;
         }
     }

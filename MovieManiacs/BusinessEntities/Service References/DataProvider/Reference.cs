@@ -200,7 +200,7 @@ namespace BusinessEntities.DataProvider {
         public System.Threading.Tasks.Task<BusinessEntities.DataProvider.User> GetUserByUserNameAsync(string username) {
             return base.Channel.GetUserByUserNameAsync(username);
         }
-        
+
         public BusinessEntities.DataProvider.CompositeType GetDataUsingDataContract(BusinessEntities.DataProvider.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
         }
@@ -208,5 +208,6 @@ namespace BusinessEntities.DataProvider {
         public System.Threading.Tasks.Task<BusinessEntities.DataProvider.CompositeType> GetDataUsingDataContractAsync(BusinessEntities.DataProvider.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
+
     }
 }

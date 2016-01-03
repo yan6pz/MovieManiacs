@@ -51,8 +51,11 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="IBaseRepository.cs" />
+    <Compile Include="IMovieRepository.cs" />
+    <Compile Include="InfoModels\Movie.cs" />
     <Compile Include="InfoModels\User.cs" />
     <Compile Include="IUserRepository.cs" />
+    <Compile Include="MovieRepository.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
