@@ -16,10 +16,17 @@ namespace MovieManiacs.Controllers
         }
 
         // GET api/values/5
+        //public string Get(int id)
+        //{
+        //    var user = base.UserService.GetByUserName("yanis");
+        //    return user.Email;
+        //}
+
+        // GET api/values/5
         public string Get(int id)
         {
-            var user = base.UserService.GetByUserName("yanis");
-            return user.Email;
+            var movie = base.MovieService.FindByMovieName("The Shawshank Redemption");
+            return movie.Name + movie.Starring;
         }
 
         // POST api/values

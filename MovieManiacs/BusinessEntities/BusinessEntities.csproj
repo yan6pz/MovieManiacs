@@ -61,6 +61,9 @@
     <None Include="Service References\DataProvider\BusinessEntities.DataProvider.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\DataProvider\BusinessEntities.DataProvider.Movie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\DataProvider\BusinessEntities.DataProvider.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

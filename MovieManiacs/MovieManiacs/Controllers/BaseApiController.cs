@@ -11,9 +11,12 @@ namespace MovieManiacs.Controllers
     public class BaseApiController : ApiController
     {
         public UserService UserService { get; set; }
+        public MovieService MovieService { get; set; }
+
         public BaseApiController()
         {
             UserService = new UserService();
+            MovieService = new MovieService();
         }
     }
 }

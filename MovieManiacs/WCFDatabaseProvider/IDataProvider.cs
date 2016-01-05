@@ -14,6 +14,7 @@ namespace WCFDatabaseProvider
     [ServiceContract]
     public interface IDataProvider
     {
+        #region Users
 
         [OperationContract]
         string GetData(int value);
@@ -23,6 +24,15 @@ namespace WCFDatabaseProvider
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
+
+        #endregion
+
+        #region Movies
+
+        [OperationContract]
+        Movie FindByMovieName(string movieName);
+
+        #endregion
 
         // TODO: Add your service operations here
     }

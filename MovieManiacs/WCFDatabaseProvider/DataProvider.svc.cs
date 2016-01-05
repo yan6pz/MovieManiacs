@@ -17,10 +17,12 @@ namespace WCFDatabaseProvider
     public class DataProvider : IDataProvider
     {
         public IUserRepository UserRepository { get; set; }
+        public IMovieRepository MovieRepository { get; set; }
 
         public DataProvider()
         {
             this.UserRepository = new UserRepository(new MovieManiacsContext());
+            this.MovieRepository = new MovieRepository(new MovieManiacsContext());
         }
         public string GetData(int value)
         {
@@ -40,11 +42,25 @@ namespace WCFDatabaseProvider
             return composite;
         }
 
+        #region User
+
         public User GetUserByUserName(string username)
         {
             var user = this.UserRepository.FindByUsername(username);
 
             return user;
         }
+
+        #endregion
+
+        #region Movie
+
+        public Movie FindByMovieName(string movieName)
+        {
+            var movie = this.MovieRepository.FindByMovieName(movieName);
+
+            return movie;
+        }
+        #endregion
     }
 }
