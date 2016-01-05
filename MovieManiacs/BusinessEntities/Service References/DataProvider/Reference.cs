@@ -415,6 +415,12 @@ namespace BusinessEntities.DataProvider {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/FindByMovieName", ReplyAction="http://tempuri.org/IDataProvider/FindByMovieNameResponse")]
         System.Threading.Tasks.Task<BusinessEntities.DataProvider.Movie> FindByMovieNameAsync(string movieName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/GetAllMovies", ReplyAction="http://tempuri.org/IDataProvider/GetAllMoviesResponse")]
+        BusinessEntities.DataProvider.Movie[] GetAllMovies();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/GetAllMovies", ReplyAction="http://tempuri.org/IDataProvider/GetAllMoviesResponse")]
+        System.Threading.Tasks.Task<BusinessEntities.DataProvider.Movie[]> GetAllMoviesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -474,6 +480,14 @@ namespace BusinessEntities.DataProvider {
         
         public System.Threading.Tasks.Task<BusinessEntities.DataProvider.Movie> FindByMovieNameAsync(string movieName) {
             return base.Channel.FindByMovieNameAsync(movieName);
+        }
+        
+        public BusinessEntities.DataProvider.Movie[] GetAllMovies() {
+            return base.Channel.GetAllMovies();
+        }
+        
+        public System.Threading.Tasks.Task<BusinessEntities.DataProvider.Movie[]> GetAllMoviesAsync() {
+            return base.Channel.GetAllMoviesAsync();
         }
     }
 }

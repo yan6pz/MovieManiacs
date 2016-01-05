@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Newtonsoft.Json;
 
 namespace MovieManiacs.Controllers
 {
@@ -22,12 +23,32 @@ namespace MovieManiacs.Controllers
         //    return user.Email;
         //}
 
+        //// GET api/values/5
+        //public string Get(int id)
+        //{
+        //    var movie = base.MovieService.FindByMovieName("The Shawshank Redemption");
+        //    return movie.Name + movie.Starring;
+        //}
+
         // GET api/values/5
         public string Get(int id)
         {
-            var movie = base.MovieService.FindByMovieName("The Shawshank Redemption");
-            return movie.Name + movie.Starring;
+            string result = String.Empty;
+            var movies = base.MovieService.GetAllMovies();
+            foreach (var movie in movies)
+            {
+                result = result + movie.Name + "";
+            }
+            //var list = JsonConvert.SerializeObject(movies,
+             //Formatting.None,
+             //new JsonSerializerSettings()
+             //{
+             //    ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+             //});
+
+            return result;
         }
+
 
         // POST api/values
         public void Post([FromBody]string value)

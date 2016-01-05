@@ -32,6 +32,10 @@ namespace WCFDatabaseProvider
         [OperationContract]
         Movie FindByMovieName(string movieName);
 
+        [OperationContract]
+        List<Movie> GetAllMovies();
+
+
         #endregion
 
         // TODO: Add your service operations here

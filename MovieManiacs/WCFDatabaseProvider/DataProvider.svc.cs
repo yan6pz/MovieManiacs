@@ -61,6 +61,14 @@ namespace WCFDatabaseProvider
 
             return movie;
         }
+
+        public List<Movie> GetAllMovies()
+        {
+            List<Movie> movies = this.MovieRepository.GetAllMovies();
+
+            return movies;
+        }
+        
         #endregion
     }
 }

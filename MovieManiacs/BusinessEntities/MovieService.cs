@@ -37,5 +37,29 @@ namespace BusinessEntities
             };
             return result;
         }
+
+        public List<MovieService> GetAllMovies()
+        {
+            var movies = client.GetAllMovies();
+            List<MovieService> moviesService = new List<MovieService>();
+            foreach (var movie in movies)
+            {
+                var result = new MovieService()
+                {
+                    Id = movie.Id,
+                    Name = movie.Name,
+                    Year = movie.Year,
+                    ReleaseDate = movie.ReleaseDate,
+                    ImageUrl = movie.ImageUrl,
+                    Rank = movie.Rank,
+                    Genre = movie.Genre,
+                    Description = movie.Description,
+                    Starring = movie.Starring
+                };
+                moviesService.Add(result);
+            }
+            return moviesService;
+        }
+
     }
 }

@@ -21,5 +21,30 @@ namespace Core
                 Genre = result.Genre,Description= result.Description,Starring = result.Starring };
             return movie;
         }
+
+        public List<Movie> GetAllMovies()
+        {
+            var results = this.Context.Movies;
+            List<Movie> movies = new List<Movie>();
+            foreach (var result in results)
+            {
+                var movie = new Movie()
+                {
+                    Id = result.Id,
+                    Name = result.Name,
+                    Year = result.Year,
+                    ReleaseDate = result.ReleaseDate,
+                    ImageUrl = result.ImageUrl,
+                    Rank = result.Rank,
+                    Genre = result.Genre,
+                    Description = result.Description,
+                    Starring = result.Starring
+                };
+                movies.Add(movie);
+            }
+            return movies;
+        }
+
+
     }
 }

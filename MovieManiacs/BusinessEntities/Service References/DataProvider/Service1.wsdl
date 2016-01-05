@@ -32,6 +32,12 @@
   <wsdl:message name="IDataProvider_FindByMovieName_OutputMessage">
     <wsdl:part name="parameters" element="tns:FindByMovieNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IDataProvider_GetAllMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMovies" />
+  </wsdl:message>
+  <wsdl:message name="IDataProvider_GetAllMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDataProvider">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IDataProvider/GetData" message="tns:IDataProvider_GetData_InputMessage" />
@@ -48,6 +54,10 @@
     <wsdl:operation name="FindByMovieName">
       <wsdl:input wsaw:Action="http://tempuri.org/IDataProvider/FindByMovieName" message="tns:IDataProvider_FindByMovieName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDataProvider/FindByMovieNameResponse" message="tns:IDataProvider_FindByMovieName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataProvider/GetAllMovies" message="tns:IDataProvider_GetAllMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataProvider/GetAllMoviesResponse" message="tns:IDataProvider_GetAllMovies_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDataProvider" type="tns:IDataProvider">
@@ -81,6 +91,15 @@
     </wsdl:operation>
     <wsdl:operation name="FindByMovieName">
       <soap:operation soapAction="http://tempuri.org/IDataProvider/FindByMovieName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMovies">
+      <soap:operation soapAction="http://tempuri.org/IDataProvider/GetAllMovies" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
