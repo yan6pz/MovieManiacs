@@ -1,8 +1,6 @@
-﻿using System;
+﻿using Core.InfoModels;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessEntities
 {
@@ -10,55 +8,17 @@ namespace BusinessEntities
     {
         public DataProvider.DataProviderClient client = new DataProvider.DataProviderClient();
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> Year { get; set; }
-        public Nullable<System.DateTime> ReleaseDate { get; set; }
-        public string ImageUrl { get; set; }
-        public Nullable<int> Rank { get; set; }
-        public string Genre { get; set; }
-        public string Description { get; set; }
-        public string Starring { get; set; }
-
-        public MovieService FindByMovieName(string movieName)
+        public Movie FindByMovieName(string movieName)
         {
             var movie = client.FindByMovieName(movieName);
-            var result = new MovieService()
-            {
-                Id = movie.Id,
-                Name = movie.Name,
-                Year = movie.Year,
-                ReleaseDate = movie.ReleaseDate,
-                ImageUrl = movie.ImageUrl,
-                Rank = movie.Rank,
-                Genre = movie.Genre,
-                Description = movie.Description,
-                Starring = movie.Starring
-            };
-            return result;
+
+            return movie;
         }
 
-        public List<MovieService> GetAllMovies()
+        public IEnumerable<Movie> GetAllMovies()
         {
             var movies = client.GetAllMovies();
-            List<MovieService> moviesService = new List<MovieService>();
-            foreach (var movie in movies)
-            {
-                var result = new MovieService()
-                {
-                    Id = movie.Id,
-                    Name = movie.Name,
-                    Year = movie.Year,
-                    ReleaseDate = movie.ReleaseDate,
-                    ImageUrl = movie.ImageUrl,
-                    Rank = movie.Rank,
-                    Genre = movie.Genre,
-                    Description = movie.Description,
-                    Starring = movie.Starring
-                };
-                moviesService.Add(result);
-            }
-            return moviesService;
+            return movies;
         }
 
     }

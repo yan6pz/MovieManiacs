@@ -77,6 +77,8 @@
     <Compile Include="DataProvider.svc.cs">
       <DependentUpon>DataProvider.svc</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MovieHelper.cs" />
+    <Compile Include="Helpers\UserHelpers.cs" />
     <Compile Include="IDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

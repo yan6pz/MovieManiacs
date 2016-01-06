@@ -5,8 +5,7 @@ using System.Web;
 
 namespace MovieManiacs.ViewModels
 {
-    public class User
+    public class MovieVM
     {
-        public string Email { get; set; }
     }
 }

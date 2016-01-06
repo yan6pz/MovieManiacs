@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.InfoModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,20 +11,18 @@ namespace BusinessEntities
     {
         public DataProvider.DataProviderClient client = new DataProvider.DataProviderClient();
 
-        public int Id { get; set; }
-        public string UserName { get; set; }
-        public Guid Password { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public DateTime RegistrationDate { get; set; }
-
-
-        public UserService GetByUserName(string userName)
+        public User GetByUserName(string userName)
         {
             var user = client.GetUserByUserName(userName);
-            var result = new UserService() { Id = user.Id, Email = user.Email };
+            var result = new User() { Id = user.Id, Email = user.Email };
             return result;
+        }
+
+        public IEnumerable<User> GetAllUserFriends(int userId)
+        {
+            var friends = client.GetUserFriends(userId);
+            return friends;
+          
         }
     }
 }

@@ -1,10 +1,6 @@
-﻿using Core.InfoModels;
-using Data;
-using System;
+﻿using Data;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core
 {
@@ -15,11 +11,17 @@ namespace Core
          : base(context)
         { }
 
-        public User FindByUsername(string username)
+        public Users FindByUsername(string username)
         {
             var result= this.Context.Users.FirstOrDefault(u => u.UserName == username);
-            var user = new User() { Id = result.Id , UserName = result.UserName ,Password =result.Password, FirstName = result.FirstName ,LastName = result.LastName, Email = result.Email, RegistrationDate = result.RegistrationDate };
-            return user;
+        
+            return result;
+        }
+
+        public IEnumerable<Users> GetUserFriends(int userId)
+        {
+            var result = this.Context.Users.Find(userId);
+            return result.Users1;
         }
     }
 }

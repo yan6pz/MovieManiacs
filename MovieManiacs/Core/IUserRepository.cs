@@ -10,6 +10,7 @@ namespace Core
 {
     public interface IUserRepository
     {
-        User FindByUsername(string username);
+        Users FindByUsername(string username);
+        IEnumerable<Users> GetUserFriends(int userId);
     }
 }

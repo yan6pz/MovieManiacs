@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:54171/DataProvider.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Core.InfoModels" />
-  <xs:import schemaLocation="http://localhost:54171/DataProvider.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WCFDatabaseProvider" />
   <xs:element name="GetData">
     <xs:complexType>
       <xs:sequence>
@@ -30,17 +29,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetDataUsingDataContract">
+  <xs:element name="GetUserFriends">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFDatabaseProvider" minOccurs="0" name="composite" nillable="true" type="q2:CompositeType" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetDataUsingDataContractResponse">
+  <xs:element name="GetUserFriendsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFDatabaseProvider" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q3:CompositeType" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Core.InfoModels" minOccurs="0" name="GetUserFriendsResult" nillable="true" type="q2:ArrayOfUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -54,7 +53,7 @@
   <xs:element name="FindByMovieNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Core.InfoModels" minOccurs="0" name="FindByMovieNameResult" nillable="true" type="q4:Movie" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Core.InfoModels" minOccurs="0" name="FindByMovieNameResult" nillable="true" type="q3:Movie" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -66,7 +65,7 @@
   <xs:element name="GetAllMoviesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Core.InfoModels" minOccurs="0" name="GetAllMoviesResult" nillable="true" type="q5:ArrayOfMovie" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Core.InfoModels" minOccurs="0" name="GetAllMoviesResult" nillable="true" type="q4:ArrayOfMovie" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

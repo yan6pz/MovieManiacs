@@ -23,11 +23,10 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="DataProvider.xsd" MetadataType="Schema" ID="ce7f3fd5-f874-4df1-b3a2-0771d8267ec0" SourceId="1" SourceUrl="http://localhost:54171/DataProvider.svc?xsd=xsd0" />
-    <MetadataFile FileName="DataProvider.disco" MetadataType="Disco" ID="cf52ec40-bb48-48bb-b349-981a60dd3a7a" SourceId="1" SourceUrl="http://localhost:54171/DataProvider.svc?disco" />
     <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="076cd5cf-0d7e-4d71-af85-6f40364aa4f9" SourceId="1" SourceUrl="http://localhost:54171/DataProvider.svc?wsdl" />
-    <MetadataFile FileName="DataProvider3.xsd" MetadataType="Schema" ID="70361ffd-56a4-483a-a8e6-ccc90c2bae02" SourceId="1" SourceUrl="http://localhost:54171/DataProvider.svc?xsd=xsd3" />
-    <MetadataFile FileName="DataProvider2.xsd" MetadataType="Schema" ID="02b90af2-7de3-4cc8-ba6f-20a1761a66cf" SourceId="1" SourceUrl="http://localhost:54171/DataProvider.svc?xsd=xsd1" />
     <MetadataFile FileName="DataProvider1.xsd" MetadataType="Schema" ID="03082c25-b53d-4078-b34e-6fbaccfd0785" SourceId="1" SourceUrl="http://localhost:54171/DataProvider.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataProvider.disco" MetadataType="Disco" ID="cf52ec40-bb48-48bb-b349-981a60dd3a7a" SourceId="1" SourceUrl="http://localhost:54171/DataProvider.svc?disco" />
+    <MetadataFile FileName="DataProvider2.xsd" MetadataType="Schema" ID="02b90af2-7de3-4cc8-ba6f-20a1761a66cf" SourceId="1" SourceUrl="http://localhost:54171/DataProvider.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

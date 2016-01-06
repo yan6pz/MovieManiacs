@@ -10,7 +10,7 @@ namespace Core
 {
     public interface IMovieRepository
     {
-        Movie FindByMovieName(string username);
-        List<Movie> GetAllMovies();
+        Movies FindByMovieName(string username);
+        IEnumerable<Movies> GetAllMovies();
     }
 }

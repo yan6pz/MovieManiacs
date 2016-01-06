@@ -1,10 +1,6 @@
-﻿using Core.InfoModels;
-using Data;
-using System;
+﻿using Data;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace Core
 {
     public class MovieRepository : BaseRepository<Movies>, IMovieRepository
@@ -13,38 +9,16 @@ namespace Core
          : base(context)
         { }
 
-        public Movie FindByMovieName(string moviename)
+        public Movies FindByMovieName(string moviename)
         {
             var result = this.Context.Movies.FirstOrDefault(u => u.Name == moviename);
-            var movie = new Movie() { Id = result.Id, Name = result.Name ,  Year = result.Year ,
-                ReleaseDate = result.ReleaseDate,ImageUrl = result.ImageUrl, Rank = result.Rank,
-                Genre = result.Genre,Description= result.Description,Starring = result.Starring };
-            return movie;
+            return result;
         }
 
-        public List<Movie> GetAllMovies()
+        public IEnumerable<Movies> GetAllMovies()
         {
-            var results = this.Context.Movies;
-            List<Movie> movies = new List<Movie>();
-            foreach (var result in results)
-            {
-                var movie = new Movie()
-                {
-                    Id = result.Id,
-                    Name = result.Name,
-                    Year = result.Year,
-                    ReleaseDate = result.ReleaseDate,
-                    ImageUrl = result.ImageUrl,
-                    Rank = result.Rank,
-                    Genre = result.Genre,
-                    Description = result.Description,
-                    Starring = result.Starring
-                };
-                movies.Add(movie);
-            }
-            return movies;
+            var results = this.Context.Movies.AsQueryable();
+            return results;
         }
-
-
     }
 }

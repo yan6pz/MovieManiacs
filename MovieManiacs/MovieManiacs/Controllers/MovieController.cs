@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace MovieManiacs.Controllers
 {
-    public class ValuesController : BaseApiController
+    public class MovieController : BaseApiController
     {
         // GET api/values
         public IEnumerable<string> Get()

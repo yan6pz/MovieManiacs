@@ -58,15 +58,8 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\DataProvider\BusinessEntities.DataProvider.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\DataProvider\BusinessEntities.DataProvider.Movie.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\DataProvider\BusinessEntities.DataProvider.User.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
+    <None Include="Properties\DataSources\Core.InfoModels.Movie.datasource" />
+    <None Include="Properties\DataSources\Core.InfoModels.User.datasource" />
     <None Include="Service References\DataProvider\DataProvider.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -74,9 +67,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\DataProvider\DataProvider2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\DataProvider\DataProvider3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\DataProvider\Service1.wsdl" />
@@ -98,6 +88,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{a7101917-7333-4e30-8c5a-5f4b68b9d2dd}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

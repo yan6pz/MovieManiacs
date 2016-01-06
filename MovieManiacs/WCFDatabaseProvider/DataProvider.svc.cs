@@ -1,19 +1,12 @@
 ﻿using Core;
 using Core.InfoModels;
 using Data;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
+using WCFDatabaseProvider.Helpers;
 
 namespace WCFDatabaseProvider
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class DataProvider : IDataProvider
     {
         public IUserRepository UserRepository { get; set; }
@@ -21,54 +14,73 @@ namespace WCFDatabaseProvider
 
         public DataProvider()
         {
-            this.UserRepository = new UserRepository(new MovieManiacsContext());
-            this.MovieRepository = new MovieRepository(new MovieManiacsContext());
+            var context=new  MovieManiacsContext();
+            this.UserRepository = new UserRepository(context);
+            this.MovieRepository = new MovieRepository(context);
         }
+
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
-        }
 
         #region User
 
         public User GetUserByUserName(string username)
         {
-            var user = this.UserRepository.FindByUsername(username);
-
+            var result = this.UserRepository.FindByUsername(username);
+            var user = new User()
+            {
+                Id = result.Id,
+                UserName = result.UserName,
+                FirstName = result.FirstName,
+                LastName = result.LastName,
+                Email = result.Email,
+                RegistrationDate = result.RegistrationDate
+            };
             return user;
         }
 
+        public IEnumerable<User> GetUserFriends(int userId)
+        {
+            var friends = this.UserRepository.GetUserFriends(userId).ToList();
+            var userFriends = new List<User>();
+            friends.ForEach(f => f.ParseUserFriend(ref userFriends));
+            return userFriends;
+        }
+
+
+
         #endregion
-
         #region Movie
-
         public Movie FindByMovieName(string movieName)
         {
-            var movie = this.MovieRepository.FindByMovieName(movieName);
-
+            var result = this.MovieRepository.FindByMovieName(movieName);
+            var movie = new Movie()
+            {
+                Id = result.Id,
+                Name = result.Name,
+                Year = result.Year,
+                ReleaseDate = result.ReleaseDate,
+                ImageUrl = result.ImageUrl,
+                Rank = result.Rank,
+                Genre = result.Genre,
+                Description = result.Description,
+                Starring = result.Starring
+            };
             return movie;
         }
 
         public List<Movie> GetAllMovies()
         {
-            List<Movie> movies = this.MovieRepository.GetAllMovies();
-
-            return movies;
+            var movies = this.MovieRepository.GetAllMovies().ToList();
+            var allMovies = new List<Movie>();
+            movies.ForEach(m => m.ParseMovies(ref allMovies));
+            return allMovies;
         }
-        
-        #endregion
+
+#endregion
+
     }
 }
