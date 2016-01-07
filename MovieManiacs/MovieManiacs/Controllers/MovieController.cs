@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Newtonsoft.Json;
+using MovieManiacs.ViewModels;
 
 namespace MovieManiacs.Controllers
 {
@@ -30,25 +31,28 @@ namespace MovieManiacs.Controllers
         //    return movie.Name + movie.Starring;
         //}
 
-        // GET api/values/5
-        public string Get(int id)
+        [Route("api/movies/all")]
+        public IEnumerable<MovieVM> GetAllMovies()
         {
-            string result = String.Empty;
-            var movies = base.MovieService.GetAllMovies();
-            foreach (var movie in movies)
+            var results = base.MovieService.GetAllMovies();
+            var movies = new List<MovieVM>();
+            foreach (var result in results)
             {
-                result = result + movie.Name + "";
+                movies.Add(new MovieVM()
+                {
+                    Id = result.Id,
+                    Year = result.Year,
+                    ReleaseDate = result.ReleaseDate,
+                    ImageUrl = result.ImageUrl,
+                    Rank = result.Rank,
+                    Genre = result.Genre,
+                    Description = result.Description,
+                    Starring = result.Starring
+                });
             }
-            //var list = JsonConvert.SerializeObject(movies,
-             //Formatting.None,
-             //new JsonSerializerSettings()
-             //{
-             //    ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-             //});
+            return movies;
 
-            return result;
         }
-
 
         // POST api/values
         public void Post([FromBody]string value)
