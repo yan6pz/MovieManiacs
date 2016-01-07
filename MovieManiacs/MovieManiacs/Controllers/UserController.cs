@@ -32,5 +32,28 @@ namespace MovieManiacs.Controllers
             return friends;
           
         }
+
+        [Route("api/usermovies/{userId}")]
+        public IEnumerable<MovieVM> GetUserMovies(int userId)
+        {
+            var results = base.UserService.GetUserMovies(userId);
+            var movies = new List<MovieVM>();
+            foreach (var result in results)
+            {
+                movies.Add(new MovieVM()
+                {
+                    Id = result.Id,
+                    Year = result.Year,
+                    ReleaseDate = result.ReleaseDate,
+                    ImageUrl = result.ImageUrl,
+                    Rank = result.Rank,
+                    Genre = result.Genre,
+                    Description = result.Description,
+                    Starring = result.Starring
+                });
+            }
+            return movies;
+
+        }
     }
 }

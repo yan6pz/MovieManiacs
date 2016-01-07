@@ -23,5 +23,11 @@ namespace Core
             var result = this.Context.Users.Find(userId);
             return result.Users1;
         }
+
+        public IEnumerable<Movies> GetUserMovies(int userId)
+        {
+            var result = this.Context.Users.Find(userId);
+            return result.Movies;
+        }
     }
 }

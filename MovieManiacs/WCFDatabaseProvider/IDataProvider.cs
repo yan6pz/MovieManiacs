@@ -17,6 +17,9 @@ namespace WCFDatabaseProvider
 
         [OperationContract]
         IEnumerable<User> GetUserFriends(int userId);
+
+        [OperationContract]
+        IEnumerable<Movie> GetUserMovies(int userId);
         #endregion
 
         #region Movies

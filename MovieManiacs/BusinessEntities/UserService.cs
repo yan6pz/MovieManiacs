@@ -21,8 +21,13 @@ namespace BusinessEntities
         public IEnumerable<User> GetAllUserFriends(int userId)
         {
             var friends = client.GetUserFriends(userId);
-            return friends;
-          
+            return friends;        
+        }
+
+        public IEnumerable<Movie> GetUserMovies(int userId)
+        {
+            var movies = client.GetUserMovies(userId);
+            return movies;
         }
     }
 }

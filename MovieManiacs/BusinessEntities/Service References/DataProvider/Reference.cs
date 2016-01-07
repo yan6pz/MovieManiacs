@@ -33,6 +33,12 @@ namespace BusinessEntities.DataProvider {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/GetUserFriends", ReplyAction="http://tempuri.org/IDataProvider/GetUserFriendsResponse")]
         System.Threading.Tasks.Task<Core.InfoModels.User[]> GetUserFriendsAsync(int userId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/GetUserMovies", ReplyAction="http://tempuri.org/IDataProvider/GetUserMoviesResponse")]
+        Core.InfoModels.Movie[] GetUserMovies(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/GetUserMovies", ReplyAction="http://tempuri.org/IDataProvider/GetUserMoviesResponse")]
+        System.Threading.Tasks.Task<Core.InfoModels.Movie[]> GetUserMoviesAsync(int userId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/FindByMovieName", ReplyAction="http://tempuri.org/IDataProvider/FindByMovieNameResponse")]
         Core.InfoModels.Movie FindByMovieName(string movieName);
         
@@ -95,6 +101,14 @@ namespace BusinessEntities.DataProvider {
         
         public System.Threading.Tasks.Task<Core.InfoModels.User[]> GetUserFriendsAsync(int userId) {
             return base.Channel.GetUserFriendsAsync(userId);
+        }
+        
+        public Core.InfoModels.Movie[] GetUserMovies(int userId) {
+            return base.Channel.GetUserMovies(userId);
+        }
+        
+        public System.Threading.Tasks.Task<Core.InfoModels.Movie[]> GetUserMoviesAsync(int userId) {
+            return base.Channel.GetUserMoviesAsync(userId);
         }
         
         public Core.InfoModels.Movie FindByMovieName(string movieName) {

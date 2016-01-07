@@ -12,5 +12,6 @@ namespace Core
     {
         Users FindByUsername(string username);
         IEnumerable<Users> GetUserFriends(int userId);
+        IEnumerable<Movies> GetUserMovies(int userId);
     }
 }

@@ -50,9 +50,17 @@ namespace WCFDatabaseProvider
             return userFriends;
         }
 
+        public IEnumerable<Movie> GetUserMovies(int userId)
+        {
+            var movies = this.UserRepository.GetUserMovies(userId).ToList();
+            var userMovies = new List<Movie>();
+            movies.ForEach(m => m.ParseMovies(ref userMovies));
+            return userMovies;
+        }   
 
 
         #endregion
+
         #region Movie
         public Movie FindByMovieName(string movieName)
         {

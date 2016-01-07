@@ -19,6 +19,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="ArrayOfMovie">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Movie" nillable="true" type="tns:Movie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMovie" nillable="true" type="tns:ArrayOfMovie" />
   <xs:complexType name="Movie">
     <xs:sequence>
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
@@ -33,10 +39,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Movie" nillable="true" type="tns:Movie" />
-  <xs:complexType name="ArrayOfMovie">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Movie" nillable="true" type="tns:Movie" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfMovie" nillable="true" type="tns:ArrayOfMovie" />
 </xs:schema>
