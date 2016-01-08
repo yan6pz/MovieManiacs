@@ -20,9 +20,9 @@ with <i>"YOURMACHINENAME\YOURSERVERNAME"</i>.
 
 The first project-<b>MoviesProject</b> may be hosted separately on IIS or can be ran from Visual Studio 2015.
 Every instance of it contains angular based requests to Web API(MovieManiacs project).
-After successful build of the solution try start MovieManiacs from VS (or host and start it) ,
-start WCFDatabaseProvider too. Then you might be able to use the functionalities provided in the client,
-which sends requests to the REST api ,which uses WCF Service(SOAP) to access
+After successful build of the solution try start <b>MovieManiacs</b> from VS (or host and start it) ,
+start <b>WCFDatabaseProvider</b> too. Then you might be able to use the functionalities provided in the client,
+which sends requests to the <b>REST api</b> ,which uses <b>WCF Service(SOAP)</b> to access
 and execute CRUD operations to the database. 
 
 
