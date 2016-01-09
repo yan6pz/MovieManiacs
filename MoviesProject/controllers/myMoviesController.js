@@ -2,7 +2,7 @@
 moviesApp.controller('MyMoviesController', function ($scope, $rootScope, $http) {
     $rootScope.showMenu = true;
     $rootScope.showSideMenu = true;
-    $http.get('json/mymovies.json')
+    $http.get('http://localhost:54148/api/movies/all')
        .then(function(res){
           $scope.myMovies = res.data;                 
        });
