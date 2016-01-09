@@ -11,6 +11,7 @@ namespace Core
     public interface IUserRepository
     {
         Users FindByUsername(string username);
+        Users FindById(int id);
         IEnumerable<Users> GetUserFriends(int userId);
         IEnumerable<Movies> GetUserMovies(int userId);
     }

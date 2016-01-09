@@ -18,6 +18,13 @@ namespace Core
             return result;
         }
 
+        public Users FindById(int id)
+        {
+            var result = this.Context.Users.Find(id);
+
+            return result;
+        }
+
         public IEnumerable<Users> GetUserFriends(int userId)
         {
             var result = this.Context.Users.Find(userId);

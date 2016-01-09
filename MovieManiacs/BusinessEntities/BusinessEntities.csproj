@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailService.cs" />
     <Compile Include="MovieService.cs" />
     <Compile Include="Service References\DataProvider\Reference.cs">
       <AutoGen>True</AutoGen>

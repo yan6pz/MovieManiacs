@@ -42,6 +42,21 @@ namespace WCFDatabaseProvider
             return user;
         }
 
+        public User FindUserById(int id)
+        {
+            var result = this.UserRepository.FindById(id);
+            var user = new User()
+            {
+                Id = result.Id,
+                UserName = result.UserName,
+                FirstName = result.FirstName,
+                LastName = result.LastName,
+                Email = result.Email,
+                RegistrationDate = result.RegistrationDate
+            };
+            return user;
+        }
+
         public IEnumerable<User> GetUserFriends(int userId)
         {
             var friends = this.UserRepository.GetUserFriends(userId).ToList();

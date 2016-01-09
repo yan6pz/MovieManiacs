@@ -27,6 +27,12 @@ namespace BusinessEntities.DataProvider {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/GetUserByUserName", ReplyAction="http://tempuri.org/IDataProvider/GetUserByUserNameResponse")]
         System.Threading.Tasks.Task<Core.InfoModels.User> GetUserByUserNameAsync(string username);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/FindUserById", ReplyAction="http://tempuri.org/IDataProvider/FindUserByIdResponse")]
+        Core.InfoModels.User FindUserById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/FindUserById", ReplyAction="http://tempuri.org/IDataProvider/FindUserByIdResponse")]
+        System.Threading.Tasks.Task<Core.InfoModels.User> FindUserByIdAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/GetUserFriends", ReplyAction="http://tempuri.org/IDataProvider/GetUserFriendsResponse")]
         Core.InfoModels.User[] GetUserFriends(int userId);
         
@@ -93,6 +99,14 @@ namespace BusinessEntities.DataProvider {
         
         public System.Threading.Tasks.Task<Core.InfoModels.User> GetUserByUserNameAsync(string username) {
             return base.Channel.GetUserByUserNameAsync(username);
+        }
+        
+        public Core.InfoModels.User FindUserById(int id) {
+            return base.Channel.FindUserById(id);
+        }
+        
+        public System.Threading.Tasks.Task<Core.InfoModels.User> FindUserByIdAsync(int id) {
+            return base.Channel.FindUserByIdAsync(id);
         }
         
         public Core.InfoModels.User[] GetUserFriends(int userId) {

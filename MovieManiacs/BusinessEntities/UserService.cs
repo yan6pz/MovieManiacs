@@ -17,6 +17,12 @@ namespace BusinessEntities
             var result = new User() { Id = user.Id, Email = user.Email };
             return result;
         }
+        public User FindById(int id)
+        {
+            var user = client.FindUserById(id);
+            var result = new User() { Id = user.Id, Email = user.Email };
+            return result;
+        }
 
         public IEnumerable<User> GetAllUserFriends(int userId)
         {

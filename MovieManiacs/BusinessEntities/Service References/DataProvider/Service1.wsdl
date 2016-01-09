@@ -19,6 +19,12 @@
   <wsdl:message name="IDataProvider_GetUserByUserName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserByUserNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IDataProvider_FindUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserById" />
+  </wsdl:message>
+  <wsdl:message name="IDataProvider_FindUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IDataProvider_GetUserFriends_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUserFriends" />
   </wsdl:message>
@@ -52,6 +58,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDataProvider/GetUserByUserName" message="tns:IDataProvider_GetUserByUserName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDataProvider/GetUserByUserNameResponse" message="tns:IDataProvider_GetUserByUserName_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="FindUserById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataProvider/FindUserById" message="tns:IDataProvider_FindUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataProvider/FindUserByIdResponse" message="tns:IDataProvider_FindUserById_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetUserFriends">
       <wsdl:input wsaw:Action="http://tempuri.org/IDataProvider/GetUserFriends" message="tns:IDataProvider_GetUserFriends_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDataProvider/GetUserFriendsResponse" message="tns:IDataProvider_GetUserFriends_OutputMessage" />
@@ -82,6 +92,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUserByUserName">
       <soap:operation soapAction="http://tempuri.org/IDataProvider/GetUserByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUserById">
+      <soap:operation soapAction="http://tempuri.org/IDataProvider/FindUserById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

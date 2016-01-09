@@ -16,6 +16,9 @@ namespace WCFDatabaseProvider
         User GetUserByUserName(string username);
 
         [OperationContract]
+        User FindUserById(int id);
+
+        [OperationContract]
         IEnumerable<User> GetUserFriends(int userId);
 
         [OperationContract]
