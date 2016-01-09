@@ -35,6 +35,14 @@ namespace MovieManiacs.Controllers
         }
 
         [AllowCrossSiteJson]
+        [Route("api/users/new")]
+        public void AddNewUser()
+        { 
+            var results = true;
+
+        }
+
+        [AllowCrossSiteJson]
         [Route("api/usermovies/{userId}")]
         public IEnumerable<MovieVM> GetUserMovies(int userId)
         {
