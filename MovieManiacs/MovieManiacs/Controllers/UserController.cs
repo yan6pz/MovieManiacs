@@ -53,13 +53,14 @@ namespace MovieManiacs.Controllers
                 movies.Add(new MovieVM()
                 {
                     Id = result.Id,
+                    title = result.Name,
                     Year = result.Year,
                     ReleaseDate = result.ReleaseDate,
-                    ImageUrl = result.ImageUrl,
+                    imageurl = result.ImageUrl,
                     Rank = result.Rank,
-                    Genre = result.Genre,
-                    Description = result.Description,
-                    Starring = result.Starring
+                    genre = result.Genre,
+                    description = result.Description,
+                    starring = result.Starring
                 });
             }
             return movies;
