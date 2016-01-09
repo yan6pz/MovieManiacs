@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Newtonsoft.Json;
 using MovieManiacs.ViewModels;
+using System.Web.Http.Filters;
 
 namespace MovieManiacs.Controllers
 {
@@ -31,6 +32,7 @@ namespace MovieManiacs.Controllers
         //    return movie.Name + movie.Starring;
         //}
 
+        [AllowCrossSiteJson]
         [Route("api/movies/all")]
         public IEnumerable<MovieVM> GetAllMovies()
         {
@@ -56,16 +58,19 @@ namespace MovieManiacs.Controllers
 
 
         // POST api/values
+        [AllowCrossSiteJson]
         public void Post([FromBody]string value)
         {
         }
 
         // PUT api/values/5
+        [AllowCrossSiteJson]
         public void Put(int id, [FromBody]string value)
         {
         }
 
         // DELETE api/values/5
+        [AllowCrossSiteJson]
         public void Delete(int id)
         {
         }

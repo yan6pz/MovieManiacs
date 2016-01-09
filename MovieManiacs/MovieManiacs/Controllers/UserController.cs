@@ -12,6 +12,7 @@ namespace MovieManiacs.Controllers
 {
     public class UserController : BaseApiController
     {
+        [AllowCrossSiteJson]
         [Route("api/friends/{userId}")]
         public IEnumerable<UserVM> Get(int userId)
         {
@@ -33,6 +34,7 @@ namespace MovieManiacs.Controllers
           
         }
 
+        [AllowCrossSiteJson]
         [Route("api/usermovies/{userId}")]
         public IEnumerable<MovieVM> GetUserMovies(int userId)
         {
