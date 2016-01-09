@@ -34,6 +34,7 @@ namespace MovieManiacs.Controllers
           
         }
 
+        [HttpPost]
         [AllowCrossSiteJson]
         [Route("api/users/new")]
         public void AddNewUser()
