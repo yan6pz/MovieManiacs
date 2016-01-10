@@ -21,5 +21,19 @@ namespace BusinessEntities
             return movies;
         }
 
+        public void CreateNewMovie(string title, string description, string genre, DateTime ReleaseDate, string starring, string imageurl)
+        {
+            Movie movie = new Movie();
+            movie.Name = title;
+            movie.Description = description;
+            movie.Genre = genre;
+            movie.ReleaseDate = ReleaseDate;
+            movie.Starring = starring;
+            movie.ImageUrl = imageurl;
+            client.CreateNewMovie(movie);
+
+        }
+
+
     }
 }

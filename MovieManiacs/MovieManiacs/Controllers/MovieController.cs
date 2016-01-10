@@ -59,6 +59,15 @@ namespace MovieManiacs.Controllers
 
         }
 
+        [HttpPost]
+        [Route("api/movie/new")]
+        public void AddNewMovie(MovieVM movie)
+        {
+            var result = true;
+           base.MovieService.CreateNewMovie(movie.title, movie.description, movie.genre, DateTime.Now, movie.starring,movie.imageurl);
+
+        }
+
 
         // POST api/values
         [AllowCrossSiteJson]

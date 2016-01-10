@@ -66,6 +66,14 @@ namespace WCFDatabaseProvider
             return userFriends;
         }
 
+        public IEnumerable<User> GetAllUsers()
+        {
+            var friends = this.UserRepository.GetAllUsers().ToList();
+            var userFriends = new List<User>();
+            friends.ForEach(f => f.ParseUserFriend(ref userFriends));
+            return userFriends;
+        }
+
         public IEnumerable<Movie> GetUserMovies(int userId)
         {
             var movies = this.UserRepository.GetUserMovies(userId).ToList();
@@ -118,7 +126,23 @@ namespace WCFDatabaseProvider
             return allMovies;
         }
 
-#endregion
+        public void CreateNewMovie(Movie movie)
+        {
+            var movieDb = new Movies()
+            {
+                Name = movie.Name,
+                Year = movie.Year,
+                ReleaseDate = movie.ReleaseDate,
+                ImageUrl = movie.ImageUrl,
+                Rank = movie.Rank,
+                Genre = movie.Genre,
+                Description = movie.Description,
+                Starring = movie.Starring,
+    };
+            this.MovieRepository.Create(movieDb);
+        }
+
+        #endregion
 
     }
 }

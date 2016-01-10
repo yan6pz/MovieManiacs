@@ -2,7 +2,7 @@
     <div style="padding-left:60%; padding-right:20%; padding-bottom:2%">
         <input class="form-control" autocomplete="on" ng-model="searchTextMyMovies">
     </div>
-    <div ng-repeat="account in accounts | filter: searchTextMyMovies" ng-if="account.isFriend==1" style="width:80%;padding-left:30%; padding-bottom:1%;">
+    <div ng-repeat="account in myfriends | filter: searchTextMyMovies" style="width:80%;padding-left:30%; padding-bottom:1%;">
         <div class="list-group-item list-group-item-info">
             <img ng-src="{{ account.imageUrl}}" style="width:70px; height:70px;">
             <div style="display:inline-block">{{account.firstName}}</div>

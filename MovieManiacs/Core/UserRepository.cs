@@ -33,6 +33,12 @@ namespace Core
             return result.Users1;
         }
 
+        public IEnumerable<Users> GetAllUsers()
+        {
+            return this.Context.Users;
+        }
+
+
         public IEnumerable<Movies> GetUserMovies(int userId)
         {
             var result = this.Context.Users.Find(userId);
