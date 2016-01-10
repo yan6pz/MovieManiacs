@@ -71,7 +71,12 @@ namespace WCFDatabaseProvider
             var userMovies = new List<Movie>();
             movies.ForEach(m => m.ParseMovies(ref userMovies));
             return userMovies;
-        }   
+        }
+
+        public void CreateNewUser(User user)
+        {
+            this.UserRepository.CreateNewUser(user);
+        }
 
 
         #endregion

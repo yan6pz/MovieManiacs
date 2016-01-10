@@ -1,18 +1,19 @@
 ﻿using EmailNotifier;
+using MovieManiacs.Notifier.Models;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace MovieManiacs.Notifier.Controllers
 {
-    [AllowAnonymous]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class NotifyController : ApiController
     {
-        [HttpGet]
-        [Route("notify/send/{id}")]
-        public IHttpActionResult test(int? id)
+        [HttpPost]
+        [Route("notify/send")]
+        public void test(Notification notify)
         {
             var service =new NotifyUser();
-            service.NotifyViaSMTP(id.Value,"You have voted up.","Notification");
-            return Ok();
+            service.AddToQueue(notify.userId, notify.message+" "+notify.rank, "Notification");
         }
     }
 }

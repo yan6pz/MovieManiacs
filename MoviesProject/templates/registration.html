@@ -3,36 +3,36 @@
     <div class="form-group">
         <label for="inputName3" class="col-sm-2 control-label">First Name</label>
         <div class="col-sm-4">
-            <input class="form-control" id="inputName3" ng-model="userObject.name" placeholder="Name">
+            <input class="form-control" id="inputName3" ng-model="userObject.firstName" placeholder="Name">
         </div>
     </div>
     <div class="form-group">
         <label for="inputName3" class="col-sm-2 control-label">Last Name</label>
         <div class="col-sm-4">
-            <input class="form-control" id="inputName3" placeholder="Name">
+            <input class="form-control" id="inputName3" ng-model="userObject.lastName" placeholder="Name">
         </div>
     </div>
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-4">
-            <input class="form-control" id="inputEmail3" placeholder="Email">
+            <input class="form-control" id="inputEmail3" ng-model="userObject.email" placeholder="Email">
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
         <div class="col-sm-4">
-            <input class="form-control" id="inputPassword3" placeholder="Password">
+            <input class="form-control" id="inputPassword3" ng-model="userObject.password" placeholder="Password">
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">Confirm Password</label>
         <div class="col-sm-4">
-            <input class="form-control" id="inputPassword3" placeholder="Password">
+            <input class="form-control" id="inputPassword3" ng-model="userObject.confirmPassword"  placeholder="Password">
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button onclick="registerUser(userObject)" type="submit" class="btn btn-success">Register</button>
+            <button ng-click="registerUser(userObject)" type="submit" class="btn btn-success">Register</button>
         </div>
     </div>
 </form>

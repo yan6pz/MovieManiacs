@@ -6,13 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Results;
 
 namespace MovieManiacs.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserController : BaseApiController
     {
-        [AllowCrossSiteJson]
+        //[AllowCrossSiteJson]
         [Route("api/friends/{userId}")]
         public IEnumerable<UserVM> Get(int userId)
         {
@@ -24,25 +26,26 @@ namespace MovieManiacs.Controllers
                 {
                     Id = result.Id,
                     UserName = result.UserName,
-                    FirstName = result.FirstName,
-                    LastName = result.LastName,
-                    Email = result.Email,
-                    RegistrationDate = result.RegistrationDate
+                    firstName = result.FirstName,
+                    lastName = result.LastName,
+                    emails = result.Email,
+                    RegistrationDate = result.RegistrationDate,
+                    imageUrl = result.ImageUrl,
                 });
             }
             return friends;
           
         }
 
-        [AllowCrossSiteJson]
+        [HttpPost]
         [Route("api/users/new")]
-        public void AddNewUser()
-        { 
-            var results = true;
+        public void AddNewUser(UserVM user)
+        {
+            base.UserService.CreateNewUser(user.firstName, user.Password, user.RegistrationDate, user.emails);
 
         }
 
-        [AllowCrossSiteJson]
+        //[AllowCrossSiteJson]
         [Route("api/usermovies/{userId}")]
         public IEnumerable<MovieVM> GetUserMovies(int userId)
         {
@@ -53,13 +56,14 @@ namespace MovieManiacs.Controllers
                 movies.Add(new MovieVM()
                 {
                     Id = result.Id,
+                    title = result.Name,
                     Year = result.Year,
                     ReleaseDate = result.ReleaseDate,
-                    ImageUrl = result.ImageUrl,
+                    imageurl = result.ImageUrl,
                     Rank = result.Rank,
-                    Genre = result.Genre,
-                    Description = result.Description,
-                    Starring = result.Starring
+                    genre = result.Genre,
+                    description = result.Description,
+                    starring = result.Starring
                 });
             }
             return movies;

@@ -45,6 +45,12 @@ namespace BusinessEntities.DataProvider {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/GetUserMovies", ReplyAction="http://tempuri.org/IDataProvider/GetUserMoviesResponse")]
         System.Threading.Tasks.Task<Core.InfoModels.Movie[]> GetUserMoviesAsync(int userId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/CreateNewUser", ReplyAction="http://tempuri.org/IDataProvider/CreateNewUserResponse")]
+        void CreateNewUser(Core.InfoModels.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/CreateNewUser", ReplyAction="http://tempuri.org/IDataProvider/CreateNewUserResponse")]
+        System.Threading.Tasks.Task CreateNewUserAsync(Core.InfoModels.User user);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/FindByMovieName", ReplyAction="http://tempuri.org/IDataProvider/FindByMovieNameResponse")]
         Core.InfoModels.Movie FindByMovieName(string movieName);
         
@@ -123,6 +129,14 @@ namespace BusinessEntities.DataProvider {
         
         public System.Threading.Tasks.Task<Core.InfoModels.Movie[]> GetUserMoviesAsync(int userId) {
             return base.Channel.GetUserMoviesAsync(userId);
+        }
+        
+        public void CreateNewUser(Core.InfoModels.User user) {
+            base.Channel.CreateNewUser(user);
+        }
+        
+        public System.Threading.Tasks.Task CreateNewUserAsync(Core.InfoModels.User user) {
+            return base.Channel.CreateNewUserAsync(user);
         }
         
         public Core.InfoModels.Movie FindByMovieName(string movieName) {

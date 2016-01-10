@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="109e44e633844091a49cade3fe08c78b" Name="Diagram1">
+      <Diagram DiagramId="109e44e633844091a49cade3fe08c78b" Name="Diagram1" ZoomLevel="95">
         <EntityTypeShape EntityType="MovieManiacsModel.Movies" Width="1.5" PointX="0.75" PointY="1.625" />
         <EntityTypeShape EntityType="MovieManiacsModel.Users" Width="1.5" PointX="3" PointY="1" />
         <AssociationConnector Association="MovieManiacsModel.UserFriends" />

@@ -23,6 +23,9 @@ namespace WCFDatabaseProvider
 
         [OperationContract]
         IEnumerable<Movie> GetUserMovies(int userId);
+
+        [OperationContract]
+        void CreateNewUser(User user);
         #endregion
 
         #region Movies
