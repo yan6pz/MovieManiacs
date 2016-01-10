@@ -12,6 +12,7 @@ namespace MovieManiacs.Notifier
     {
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors();
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
