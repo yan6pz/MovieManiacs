@@ -51,7 +51,7 @@ public class MoviesListFragment extends Fragment {
 
     @ItemClick(R.id.movies_list)
     void discountClicked(Movie movie) {
-        MovieActivity_.intent(this).imageUrl(movie.imageurl).movieTitle(movie.title).start();
+        MovieActivity_.intent(this).imageUrl(movie.imageurl).movieTitle(movie.title).description(movie.description).starring(movie.starring).genre(movie.genre).start();
     }
 
 }
