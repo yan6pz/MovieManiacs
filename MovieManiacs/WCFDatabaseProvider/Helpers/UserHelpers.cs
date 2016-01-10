@@ -15,6 +15,7 @@ namespace WCFDatabaseProvider.Helpers
                 FirstName = friend.FirstName,
                 LastName = friend.LastName,
                 Email = friend.Email,
+                ImageUrl=friend.ImageUrl,
                 RegistrationDate = friend.RegistrationDate
             });
         }

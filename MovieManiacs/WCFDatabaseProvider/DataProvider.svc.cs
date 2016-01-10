@@ -91,6 +91,7 @@ namespace WCFDatabaseProvider
                 Password = user.Password,
                 RegistrationDate = DateTime.Now,
                 UserName = user.UserName,
+                ImageUrl=user.ImageUrl,
                 Email=user.Email
             };
             this.UserRepository.Create(userDb);
@@ -128,6 +129,7 @@ namespace WCFDatabaseProvider
 
         public void CreateNewMovie(Movie movie)
         {
+            var user=this.UserRepository.FindById(movie.UserId);
             var movieDb = new Movies()
             {
                 Name = movie.Name,
@@ -138,7 +140,9 @@ namespace WCFDatabaseProvider
                 Genre = movie.Genre,
                 Description = movie.Description,
                 Starring = movie.Starring,
+                
     };
+            movieDb.Users.Add(user);
             this.MovieRepository.Create(movieDb);
         }
 
