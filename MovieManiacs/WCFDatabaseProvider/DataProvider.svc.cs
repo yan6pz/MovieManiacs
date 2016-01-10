@@ -1,6 +1,7 @@
 ﻿using Core;
 using Core.InfoModels;
 using Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WCFDatabaseProvider.Helpers;
@@ -75,7 +76,16 @@ namespace WCFDatabaseProvider
 
         public void CreateNewUser(User user)
         {
-            this.UserRepository.CreateNewUser(user);
+            var userDb = new Users()
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Password = user.Password,
+                RegistrationDate = DateTime.Now,
+                UserName = user.UserName,
+                Email=user.Email
+            };
+            this.UserRepository.Create(userDb);
         }
 
 

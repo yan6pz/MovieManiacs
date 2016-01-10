@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core.InfoModels;
+using System;
 
 namespace Core
 {
-    public class UserRepository : BaseRepository<Users>, IUserRepository
+    public class UserRepository : BaseRepository<Users>, IBaseRepository<Users>, IUserRepository
     {
 
         public UserRepository(MovieManiacsContext context)
@@ -41,6 +42,46 @@ namespace Core
         public void CreateNewUser(User user)
         {
             
+        }
+
+        public void Add(IEnumerable<User> entities)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Add(User entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Attach(User entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Create(IEnumerable<User> entities)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Create(Users entity)
+        {
+            return base.Create(entity);
+        }
+
+        IList<Users> IBaseRepository<Users>.GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Delete(IEnumerable<User> entities)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Delete(User entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

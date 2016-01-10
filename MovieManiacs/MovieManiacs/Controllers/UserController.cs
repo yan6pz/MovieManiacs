@@ -28,7 +28,7 @@ namespace MovieManiacs.Controllers
                     UserName = result.UserName,
                     firstName = result.FirstName,
                     lastName = result.LastName,
-                    emails = result.Email,
+                    email = result.Email,
                     RegistrationDate = result.RegistrationDate,
                     imageUrl = result.ImageUrl,
                 });
@@ -41,7 +41,7 @@ namespace MovieManiacs.Controllers
         [Route("api/users/new")]
         public void AddNewUser(UserVM user)
         {
-            base.UserService.CreateNewUser(user.firstName, user.Password, user.RegistrationDate, user.emails);
+            base.UserService.CreateNewUser(user.firstName,user.lastName, user.Password, user.RegistrationDate, user.email);
 
         }
 
