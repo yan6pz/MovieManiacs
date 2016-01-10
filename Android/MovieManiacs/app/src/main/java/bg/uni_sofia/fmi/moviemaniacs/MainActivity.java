@@ -1,5 +1,7 @@
 package bg.uni_sofia.fmi.moviemaniacs;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,12 +15,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -41,6 +46,9 @@ public class MainActivity extends AppCompatActivity
     @ViewById(R.id.nav_view)
     NavigationView navigationView;
 
+    @ViewById(R.id.content_frame)
+    FrameLayout frameLayout;
+
     @Click(R.id.fab)
     public void fabClicked() {
         Snackbar.make(fab, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -57,8 +65,6 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
-
-        retrieveMovies();
     }
 
     @Override
@@ -102,6 +108,11 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camara) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            Fragment fragment = new MoviesListFragment_();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, fragment)
+                    .commit();
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -118,16 +129,4 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Background
-    public void retrieveMovies() {
-        try {
-            List<Movie> movies = MovieManiacsApplication.restAdapter.create(MovieManiacsService.class)
-                    .getAllMovies();
-            Log.d(MovieManiacsApplication.TAG, "retrieved movies " + movies);
-//            populateUi(movies);
-        } catch (Throwable t) {
-            Log.e(MovieManiacsApplication.TAG, "can't retrieve movies", t);
-        }
-
-    }
 }
