@@ -36,13 +36,15 @@ namespace BusinessEntities
             return movies;
         }
 
-        public void CreateNewUser(string firstName, Guid Password, DateTime RegistrationDate, string emails)
+        public void CreateNewUser(string firstName, string lastName, Guid Password, DateTime RegistrationDate, string email)
         {
             User user = new User();
             user.FirstName = firstName;
+            user.LastName = lastName;
             user.Password = new Guid();
             user.RegistrationDate = RegistrationDate;
-            user.Email = emails;
+            user.Email = email;
+            user.UserName = "yanis";
             client.CreateNewUser(user);
 
         }

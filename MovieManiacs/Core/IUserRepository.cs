@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public interface IUserRepository
+    public interface IUserRepository:IBaseRepository<Users>
     {
         Users FindByUsername(string username);
         Users FindById(int id);

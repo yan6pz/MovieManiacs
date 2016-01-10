@@ -12,7 +12,7 @@ namespace MovieManiacs.ViewModels
         public System.Guid Password { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
-        public string emails { get; set; }
+        public string email { get; set; }
         public System.DateTime RegistrationDate { get; set; }
         public string imageUrl { get; set; }
     }
