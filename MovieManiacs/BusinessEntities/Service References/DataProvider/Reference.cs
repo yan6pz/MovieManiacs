@@ -68,6 +68,12 @@ namespace BusinessEntities.DataProvider {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/GetAllMovies", ReplyAction="http://tempuri.org/IDataProvider/GetAllMoviesResponse")]
         System.Threading.Tasks.Task<Core.InfoModels.Movie[]> GetAllMoviesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/CreateNewMovie", ReplyAction="http://tempuri.org/IDataProvider/CreateNewMovieResponse")]
+        void CreateNewMovie(Core.InfoModels.Movie movie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataProvider/CreateNewMovie", ReplyAction="http://tempuri.org/IDataProvider/CreateNewMovieResponse")]
+        System.Threading.Tasks.Task CreateNewMovieAsync(Core.InfoModels.Movie movie);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -167,6 +173,14 @@ namespace BusinessEntities.DataProvider {
         
         public System.Threading.Tasks.Task<Core.InfoModels.Movie[]> GetAllMoviesAsync() {
             return base.Channel.GetAllMoviesAsync();
+        }
+        
+        public void CreateNewMovie(Core.InfoModels.Movie movie) {
+            base.Channel.CreateNewMovie(movie);
+        }
+        
+        public System.Threading.Tasks.Task CreateNewMovieAsync(Core.InfoModels.Movie movie) {
+            return base.Channel.CreateNewMovieAsync(movie);
         }
     }
 }

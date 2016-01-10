@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public interface IMovieRepository
+    public interface IMovieRepository : IBaseRepository<Movies>
     {
         Movies FindByMovieName(string username);
         IEnumerable<Movies> GetAllMovies();
+        void CreateNewMovie(Movie movie);
     }
 }

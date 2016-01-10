@@ -126,7 +126,23 @@ namespace WCFDatabaseProvider
             return allMovies;
         }
 
-#endregion
+        public void CreateNewMovie(Movie movie)
+        {
+            var movieDb = new Movies()
+            {
+                Name = movie.Name,
+                Year = movie.Year,
+                ReleaseDate = movie.ReleaseDate,
+                ImageUrl = movie.ImageUrl,
+                Rank = movie.Rank,
+                Genre = movie.Genre,
+                Description = movie.Description,
+                Starring = movie.Starring,
+    };
+            this.MovieRepository.Create(movieDb);
+        }
+
+        #endregion
 
     }
 }

@@ -40,6 +40,9 @@ namespace WCFDatabaseProvider
         [OperationContract]
         List<Movie> GetAllMovies();
 
+        [OperationContract]
+        void CreateNewMovie(Movie movie);
+
 
         #endregion
     }
