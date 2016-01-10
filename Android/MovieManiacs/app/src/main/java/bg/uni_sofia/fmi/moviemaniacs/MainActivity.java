@@ -53,8 +53,9 @@ public class MainActivity extends AppCompatActivity
 
     @Click(R.id.fab)
     public void fabClicked() {
-        Snackbar.make(fab, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
+        CreateMovieActivity_.intent(this).start();
+//        Snackbar.make(fab, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show();
     }
 
     @AfterViews
