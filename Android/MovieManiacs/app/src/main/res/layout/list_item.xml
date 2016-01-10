@@ -25,10 +25,11 @@
     android:gravity="center_vertical">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/avatar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginRight="16dp"/>
+        android:id="@+id/movie_image"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"/>
 
     <TextView
         android:id="@+id/movie_title"
