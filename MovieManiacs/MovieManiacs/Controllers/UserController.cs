@@ -26,10 +26,11 @@ namespace MovieManiacs.Controllers
                 {
                     Id = result.Id,
                     UserName = result.UserName,
-                    FirstName = result.FirstName,
-                    LastName = result.LastName,
-                    Email = result.Email,
-                    RegistrationDate = result.RegistrationDate
+                    firstName = result.FirstName,
+                    lastName = result.LastName,
+                    emails = result.Email,
+                    RegistrationDate = result.RegistrationDate,
+                    imageUrl = result.ImageUrl,
                 });
             }
             return friends;
