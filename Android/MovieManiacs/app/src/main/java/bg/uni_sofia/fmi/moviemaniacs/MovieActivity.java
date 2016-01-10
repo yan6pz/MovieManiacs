@@ -1,7 +1,11 @@
 package bg.uni_sofia.fmi.moviemaniacs;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.LayerDrawable;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -37,7 +41,7 @@ public class MovieActivity extends Activity {
     int year;
 
     @Extra
-    int rank;
+    float rank;
 
     @ViewById(R.id.backdrop)
     ImageView movieImage;
@@ -57,6 +61,9 @@ public class MovieActivity extends Activity {
     @ViewById(R.id.collapsing_toolbar)
     CollapsingToolbarLayout collapsingToolbar;
 
+    @ViewById(R.id.movie_year)
+    TextView movieYear;
+
     DisplayImageOptions displayImageOptions = new DisplayImageOptions.Builder()
             .considerExifParams(true)
             .cacheOnDisk(true)
@@ -69,7 +76,9 @@ public class MovieActivity extends Activity {
         movieDescription.setText(description.trim());
         movieActors.setText(starring.trim());
         movieGenre.setText(genre.trim());
-        ratingBar.setRating(4);
+        Log.i(MovieManiacsApplication.TAG, "rank: " + rank);
+        ratingBar.setRating(rank / 2);
+        movieYear.setText(Integer.toString(year));
     }
 
 }

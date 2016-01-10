@@ -3,7 +3,7 @@ package bg.uni_sofia.fmi.moviemaniacs.models;
 public class Movie {
 
     public int Id;
-    public int Rank;
+    public float Rank;
     public String ReleaseDate;
     public int Year;
     public String description;
