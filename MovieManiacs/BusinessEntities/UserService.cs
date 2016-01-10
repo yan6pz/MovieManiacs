@@ -35,5 +35,16 @@ namespace BusinessEntities
             var movies = client.GetUserMovies(userId);
             return movies;
         }
+
+        public void CreateNewUser(string firstName, Guid Password, DateTime RegistrationDate, string emails)
+        {
+            User user = new User();
+            user.FirstName = firstName;
+            user.Password = new Guid();
+            user.RegistrationDate = RegistrationDate;
+            user.Email = emails;
+            client.CreateNewUser(user);
+
+        }
     }
 }

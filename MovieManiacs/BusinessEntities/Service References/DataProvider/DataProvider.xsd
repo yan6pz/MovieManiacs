@@ -71,6 +71,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CreateNewUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Core.InfoModels" minOccurs="0" name="user" nillable="true" type="q5:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="FindByMovieName">
     <xs:complexType>
       <xs:sequence>
@@ -81,7 +93,7 @@
   <xs:element name="FindByMovieNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Core.InfoModels" minOccurs="0" name="FindByMovieNameResult" nillable="true" type="q5:Movie" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Core.InfoModels" minOccurs="0" name="FindByMovieNameResult" nillable="true" type="q6:Movie" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -93,7 +105,7 @@
   <xs:element name="GetAllMoviesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Core.InfoModels" minOccurs="0" name="GetAllMoviesResult" nillable="true" type="q6:ArrayOfMovie" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Core.InfoModels" minOccurs="0" name="GetAllMoviesResult" nillable="true" type="q7:ArrayOfMovie" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

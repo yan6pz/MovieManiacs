@@ -1,6 +1,7 @@
 ﻿using Data;
 using System.Collections.Generic;
 using System.Linq;
+using Core.InfoModels;
 
 namespace Core
 {
@@ -35,6 +36,11 @@ namespace Core
         {
             var result = this.Context.Users.Find(userId);
             return result.Movies;
+        }
+
+        public void CreateNewUser(User user)
+        {
+            
         }
     }
 }

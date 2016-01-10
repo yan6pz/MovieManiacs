@@ -40,8 +40,8 @@ namespace MovieManiacs.Controllers
         [HttpPost]
         [Route("api/users/new")]
         public void AddNewUser(UserVM user)
-        { 
-            var results = true;
+        {
+            base.UserService.CreateNewUser(user.firstName, user.Password, user.RegistrationDate, user.emails);
 
         }
 
