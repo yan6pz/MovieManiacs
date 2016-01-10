@@ -1,7 +1,9 @@
 ﻿moviesApp.controller('GlobalController', function ($scope, $http, $rootScope) {
-    userObject = '';
+    $scope.userObject = {};
+    $scope.loginUser = {};
+    $scope.currentUser = {};
 
-    registerUser = function registerUser(userObject) {
+    $scope.registerUser = function registerUser(userObject) {
         var objJSON = angular.toJson(userObject, 2);
         console.log(objJSON);
         return $http.post('http://localhost:54148/api/users/new', objJSON).then(function (res) {
@@ -10,4 +12,14 @@
             return err;
         })
     }
+
+    //$scope.login = function login(loginUser) {
+    //    var objJSON = angular.toJson(loginUser, 2);
+    //    console.log(objJSON);
+    //    return $http.post('http://localhost:54148/api/users/new', objJSON).then(function (res) {
+    //        return res;
+    //    }).catch(function (err) {
+    //        return err;
+    //    })
+    //}
 });
