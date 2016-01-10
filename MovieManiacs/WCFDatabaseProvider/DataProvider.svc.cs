@@ -66,6 +66,14 @@ namespace WCFDatabaseProvider
             return userFriends;
         }
 
+        public IEnumerable<User> GetAllUsers()
+        {
+            var friends = this.UserRepository.GetAllUsers().ToList();
+            var userFriends = new List<User>();
+            friends.ForEach(f => f.ParseUserFriend(ref userFriends));
+            return userFriends;
+        }
+
         public IEnumerable<Movie> GetUserMovies(int userId)
         {
             var movies = this.UserRepository.GetUserMovies(userId).ToList();

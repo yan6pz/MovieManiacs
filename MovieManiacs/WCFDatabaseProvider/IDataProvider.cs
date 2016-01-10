@@ -22,6 +22,10 @@ namespace WCFDatabaseProvider
         IEnumerable<User> GetUserFriends(int userId);
 
         [OperationContract]
+        IEnumerable<User> GetAllUsers();
+
+
+        [OperationContract]
         IEnumerable<Movie> GetUserMovies(int userId);
 
         [OperationContract]

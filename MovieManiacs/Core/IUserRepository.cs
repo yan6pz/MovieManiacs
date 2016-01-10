@@ -15,5 +15,7 @@ namespace Core
         IEnumerable<Users> GetUserFriends(int userId);
         IEnumerable<Movies> GetUserMovies(int userId);
         void CreateNewUser(User user);
+        IEnumerable<Users> GetAllUsers();
+        
     }
 }

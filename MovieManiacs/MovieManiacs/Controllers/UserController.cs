@@ -37,6 +37,28 @@ namespace MovieManiacs.Controllers
           
         }
 
+        [Route("api/users/all")]
+        public IEnumerable<UserVM> GetAllUsers()
+        {
+            var results = base.UserService.GetAllUsers();
+            var friends = new List<UserVM>();
+            foreach (var result in results)
+            {
+                friends.Add(new UserVM()
+                {
+                    Id = result.Id,
+                    UserName = result.UserName,
+                    firstName = result.FirstName,
+                    lastName = result.LastName,
+                    email = result.Email,
+                    RegistrationDate = result.RegistrationDate,
+                    imageUrl = result.ImageUrl,
+                });
+            }
+            return friends;
+
+        }
+
         [HttpPost]
         [Route("api/users/new")]
         public void AddNewUser(UserVM user)
