@@ -11,7 +11,7 @@ namespace MovieManiacs.Notifier.Controllers
         public IHttpActionResult test(int? id)
         {
             var service =new NotifyUser();
-            service.NotifyViaSMTP(id.Value,"You have voted up.","Notification");
+            service.AddToQueue(id.Value,"You have voted up.","Notification");
             return Ok();
         }
     }
