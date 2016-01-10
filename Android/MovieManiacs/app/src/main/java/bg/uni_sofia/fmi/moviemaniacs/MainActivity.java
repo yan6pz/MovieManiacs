@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity
     @ViewById(R.id.content_frame)
     FrameLayout frameLayout;
 
+    MoviesListFragment_ fragment = new MoviesListFragment_();
+
     @Click(R.id.fab)
     public void fabClicked() {
         Snackbar.make(fab, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        showMoviesList();
     }
 
     @Override
@@ -93,10 +97,15 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            refreshList();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void refreshList() {
+        fragment.adapter.notifyDataSetChanged();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -106,27 +115,23 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camara) {
-            // Handle the camera action
+//            showMoviesList();
         } else if (id == R.id.nav_gallery) {
-            Fragment fragment = new MoviesListFragment_();
-            FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, fragment)
-                    .commit();
 
         } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void showMoviesList() {
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, fragment)
+                .commit();
     }
 
 }
