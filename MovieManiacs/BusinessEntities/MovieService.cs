@@ -21,7 +21,7 @@ namespace BusinessEntities
             return movies;
         }
 
-        public void CreateNewMovie(string title, string description, string genre, DateTime ReleaseDate, string starring, string imageurl)
+        public void CreateNewMovie(int userId,string title, string description, string genre, DateTime ReleaseDate, string starring, string imageurl)
         {
             Movie movie = new Movie();
             movie.Name = title;
@@ -30,6 +30,7 @@ namespace BusinessEntities
             movie.ReleaseDate = ReleaseDate;
             movie.Starring = starring;
             movie.ImageUrl = imageurl;
+            movie.UserId = userId;
             client.CreateNewMovie(movie);
 
         }

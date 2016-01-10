@@ -51,6 +51,7 @@ namespace BusinessEntities
             user.RegistrationDate = RegistrationDate;
             user.Email = email;
             user.UserName = "yanis";
+            user.ImageUrl= "http://www.clipartbest.com/cliparts/yTk/4Rd/yTk4RdqEc.jpeg";
             client.CreateNewUser(user);
 
         }

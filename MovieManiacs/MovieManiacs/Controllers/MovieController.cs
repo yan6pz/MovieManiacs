@@ -64,7 +64,8 @@ namespace MovieManiacs.Controllers
         public void AddNewMovie(MovieVM movie)
         {
             var result = true;
-           base.MovieService.CreateNewMovie(movie.title, movie.description, movie.genre, DateTime.Now, movie.starring,movie.imageurl);
+            int userId = 2;
+           base.MovieService.CreateNewMovie(userId,movie.title, movie.description, movie.genre, DateTime.Now, movie.starring,movie.imageurl);
 
         }
 
