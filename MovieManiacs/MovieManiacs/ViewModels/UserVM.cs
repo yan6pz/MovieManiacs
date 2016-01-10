@@ -10,9 +10,10 @@ namespace MovieManiacs.ViewModels
         public int Id { get; set; }
         public string UserName { get; set; }
         public System.Guid Password { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string emails { get; set; }
         public System.DateTime RegistrationDate { get; set; }
+        public string imageUrl { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿moviesApp.controller('AccountsController', function ($scope, $http, $rootScope) {
-    $http.get('json/users.json')
+    $http.get('http://localhost:54148/api/friends/6')
          .then(function (res) {
              $scope.accounts = res.data;
          });
