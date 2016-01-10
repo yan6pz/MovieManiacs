@@ -13,8 +13,7 @@ namespace MovieManiacs
     {
         public static void Register(HttpConfiguration config)
         {
-            var cors = new EnableCorsAttribute("*", "*", "*");
-            config.EnableCors(cors);
+            config.EnableCors();
 
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));

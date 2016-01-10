@@ -6,13 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Results;
 
 namespace MovieManiacs.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserController : BaseApiController
     {
-        [AllowCrossSiteJson]
+        //[AllowCrossSiteJson]
         [Route("api/friends/{userId}")]
         public IEnumerable<UserVM> Get(int userId)
         {
@@ -35,15 +37,14 @@ namespace MovieManiacs.Controllers
         }
 
         [HttpPost]
-        [AllowCrossSiteJson]
         [Route("api/users/new")]
-        public void AddNewUser()
+        public void AddNewUser(UserVM user)
         { 
             var results = true;
 
         }
 
-        [AllowCrossSiteJson]
+        //[AllowCrossSiteJson]
         [Route("api/usermovies/{userId}")]
         public IEnumerable<MovieVM> GetUserMovies(int userId)
         {

@@ -7,9 +7,11 @@ using System.Web.Http;
 using Newtonsoft.Json;
 using MovieManiacs.ViewModels;
 using System.Web.Http.Filters;
+using System.Web.Http.Cors;
 
 namespace MovieManiacs.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MovieController : BaseApiController
     {
         // GET api/values
@@ -31,8 +33,8 @@ namespace MovieManiacs.Controllers
         //    var movie = base.MovieService.FindByMovieName("The Shawshank Redemption");
         //    return movie.Name + movie.Starring;
         //}
-
-        [AllowCrossSiteJson]
+        //[DisableCors]
+        //[AllowCrossSiteJson]
         [Route("api/movies/all")]
         public IEnumerable<MovieVM> GetAllMovies()
         {
