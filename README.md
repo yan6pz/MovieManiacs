@@ -10,7 +10,7 @@ the two checkboxes should be checked. If they are not check them and try rebuild
 
 <h4>Restoring of packages is still not running?</h4> 
 Check if you have <b>packages</b> folder in current directory of the solution?
-If yes delete it and try rebuilding. If no... pray God for help.
+If yes delete it and try rebuilding. 
 
 Also restore needed database<b>(MovieManiacs.bak)</b>, and if your
 sql server has different name
@@ -26,4 +26,7 @@ which sends requests to the <b>REST api</b> ,which uses <b>WCF Service(SOAP)</b>
 and execute CRUD operations to the database. 
 
 Another API (MovieManiacs.Notifier) is used for sending and scheduling notifications via <b>smtp.gmail</b> service. It uses WCFDataProvider to iterate with the database.
+
+<h4>Hosting in IIS</h4>
+The WCF and the Notifier should be hosted as new Websites with application pools identity: NetworkService. Also if you do not have sql server login with <b>NT AUTHORITY\NETWORK SERVICE</b> you should create one with usermapping property of the database you use set to db owner. The WebUI(angular based site) and the Web API(REST) should be hosted with app pool identity set to ApplicationPoolIdentity(the default one). All of the four websites shoul be configured to use .NetFramework 4.0.
 
