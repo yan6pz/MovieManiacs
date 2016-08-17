@@ -1,6 +1,7 @@
 ﻿using Core.InfoModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace BusinessEntities
         public IEnumerable<User> GetAllUserFriends(int userId)
         {
             var friends = client.GetUserFriends(userId);
-            return friends;        
+            return friends;
         }
 
         public IEnumerable<User> GetAllUsers()
@@ -44,15 +45,44 @@ namespace BusinessEntities
 
         public void CreateNewUser(string firstName, string lastName, Guid Password, DateTime RegistrationDate, string email)
         {
-            User user = new User();
-            user.FirstName = firstName;
-            user.LastName = lastName;
-            user.Password = new Guid();
-            user.RegistrationDate = RegistrationDate;
-            user.Email = email;
-            user.UserName = "yanis";
-            user.ImageUrl= "http://www.clipartbest.com/cliparts/yTk/4Rd/yTk4RdqEc.jpeg";
-            client.CreateNewUser(user);
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            for (int i = 0; i < 1000; i++)
+            {
+                User user = new User();
+                user.FirstName = "new";
+                user.LastName = "newOne";
+                user.Password = new Guid();
+                user.RegistrationDate = DateTime.Now;
+                user.Email = "email@test.com";
+                user.UserName = "yanis";
+                user.ImageUrl = "http://www.clipartbest.com/cliparts/yTk/4Rd/yTk4RdqEc.jpeg";
+                client.CreateNewUser(user);
+        }
+        sw.Stop();
+            Console.WriteLine("Elapsed={0}", sw.Elapsed);
+        }
+
+        public async Task CreateNewUserAsync(string firstName, string lastName, Guid Password, DateTime RegistrationDate, string email)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            for (int i = 0; i < 1000; i++)
+            {
+                User user = new User();
+                user.FirstName = "new";
+                user.LastName = "newOne";
+                user.Password = new Guid();
+                user.RegistrationDate = DateTime.Now;
+                user.Email = "email@test.com";
+                user.UserName = "yanis";
+                user.ImageUrl = "http://www.clipartbest.com/cliparts/yTk/4Rd/yTk4RdqEc.jpeg";
+                await client.CreateAsync(user);
+            }
+            sw.Stop();
+            Console.WriteLine("Elapsed={0}", sw.Elapsed);
 
         }
     }

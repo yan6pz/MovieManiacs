@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Core.InfoModels;
 using System;
+using System.Threading.Tasks;
 
 namespace Core
 {
@@ -73,6 +74,11 @@ namespace Core
         public int Create(Users entity)
         {
             return base.Create(entity);
+        }
+
+        public override  Task<int> CreateAsync(Users entity)
+        {
+            return base.CreateAsync(entity);
         }
 
         IList<Users> IBaseRepository<Users>.GetAll()

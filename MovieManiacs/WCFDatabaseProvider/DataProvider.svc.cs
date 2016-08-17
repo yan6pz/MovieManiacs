@@ -4,6 +4,7 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using WCFDatabaseProvider.Helpers;
 
 namespace WCFDatabaseProvider
@@ -95,6 +96,21 @@ namespace WCFDatabaseProvider
                 Email=user.Email
             };
             this.UserRepository.Create(userDb);
+        }
+
+        public async Task CreateAsync(User user)
+        {
+            var userDb = new Users()
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Password = user.Password,
+                RegistrationDate = DateTime.Now,
+                UserName = user.UserName,
+                ImageUrl = user.ImageUrl,
+                Email = user.Email
+            };
+            await this.UserRepository.CreateAsync(userDb);
         }
 
 

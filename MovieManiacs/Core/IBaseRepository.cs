@@ -20,6 +20,7 @@ namespace Core
         void Attach(TEntity entity);
         void Create(IEnumerable<TEntity> entities);
         int Create(TEntity entity);
+        Task<int> CreateAsync(TEntity entity);
         IList<TEntity> GetAll();
         int Delete(IEnumerable<TEntity> entities);
         int Delete(TEntity entity);

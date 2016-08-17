@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Core
 {
@@ -23,6 +24,11 @@ namespace Core
         public virtual int SaveChanges()
         {
             return this.Context.SaveChanges();
+        }
+
+        public virtual Task<int> SaveChangesAsync()
+        {
+            return this.Context.SaveChangesAsync();
         }
 
     }
@@ -73,6 +79,13 @@ namespace Core
             this.ObjectSet.Add(entity);
 
             return this.SaveChanges();
+        }
+
+        public virtual Task<int> CreateAsync(TEntity entity)
+        {
+            this.ObjectSet.Add(entity);
+
+            return this.SaveChangesAsync();
         }
 
 

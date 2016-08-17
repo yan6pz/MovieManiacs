@@ -2,7 +2,7 @@
 
 <h3><b>How to set up the project?</b></h3>
 
-The project contains two parts front-end(<i>angular.js</i>) and back-end <i>C#</i> part. 
+The project contains two parts front-end(angular.js) and back-end C# part. 
 First of all, after cloning the repo from git, try to build the whole solution.
 If the build succeed after restoring all of the needed packages, you are lucky :).
 If the restoring of missing packages do not start check Tools->Options-> NuGet Package Manager

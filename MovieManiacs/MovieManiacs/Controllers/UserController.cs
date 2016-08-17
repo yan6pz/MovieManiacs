@@ -2,9 +2,11 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Results;
@@ -63,8 +65,19 @@ namespace MovieManiacs.Controllers
         [Route("api/users/new")]
         public void AddNewUser(UserVM user)
         {
+            user = new UserVM();
             base.UserService.CreateNewUser(user.firstName,user.lastName, user.Password, user.RegistrationDate, user.email);
 
+        }
+
+
+        [HttpPost]
+        [Route("api/users/newasync")]
+        public async Task AddNewUserAsync(UserVM user)
+        {
+
+            user = new UserVM();
+            await base.UserService.CreateNewUserAsync(user.firstName, user.lastName, user.Password, user.RegistrationDate, user.email);
         }
 
         //[AllowCrossSiteJson]

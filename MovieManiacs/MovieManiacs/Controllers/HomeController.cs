@@ -1,4 +1,6 @@
-﻿using MovieManiacs.ViewModels;
+﻿
+using MovieManiacs.Models;
+using MovieManiacs.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,16 +11,14 @@ using System.Web.Mvc;
 
 namespace MovieManiacs.Controllers
 {
-    public class HomeController : BaseApiController
+    public class HomeController : Controller
     {
-        public JsonResult Index()
+
+
+        public ActionResult Index()
         {
 
-            var user = base.UserService.GetByUserName("yanis");
-            return new JsonResult
-            {
-                Data = JsonConvert.SerializeObject(new { Email = user.Email })
-            };
+            return View();
         }
     }
 }

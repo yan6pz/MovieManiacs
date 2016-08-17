@@ -36,6 +36,7 @@
       <xs:element minOccurs="0" name="Rank" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="ReleaseDate" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Starring" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
       <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
     </xs:sequence>
   </xs:complexType>

@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartup(typeof(MovieManiacs.Startup))]
+//[assembly: OwinStartup(typeof(SignalRChat.Startup))]
 
 namespace MovieManiacs
 {
@@ -13,6 +14,7 @@ namespace MovieManiacs
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            app.MapSignalR();
         }
     }
 }

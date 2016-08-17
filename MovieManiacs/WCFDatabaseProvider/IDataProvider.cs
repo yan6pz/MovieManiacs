@@ -1,6 +1,7 @@
 ﻿using Core.InfoModels;
 using System.Collections.Generic;
 using System.ServiceModel;
+using System.Threading.Tasks;
 
 namespace WCFDatabaseProvider
 {
@@ -30,6 +31,8 @@ namespace WCFDatabaseProvider
 
         [OperationContract]
         void CreateNewUser(User user);
+        [OperationContract]
+        Task CreateAsync(User user);
         #endregion
 
         #region Movies

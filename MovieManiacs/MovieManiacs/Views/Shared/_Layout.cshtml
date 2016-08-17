@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/bundles/jqueryUi")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @Scripts.Render("~/bundles/signalR")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -26,16 +30,14 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+   
         @RenderBody()
-        <hr />
-        <footer>
+        @*<footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        </footer>*@
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+
+  
     @RenderSection("scripts", required: false)
 </body>
 </html>
