@@ -1,5 +1,7 @@
 # MovieManiacs
 
+The project is used for Distributed software systems. Combination of <b>REST API</b> and <b>SOAP(WCF)</b> for remote invoke of database queries. <b>SignalR</b> is integrated and <b>SPA</b> chat room is implemented. The room gives ability for sending private messages as well.
+
 <h3><b>How to set up the project?</b></h3>
 
 The project contains two parts front-end(angular.js) and back-end C# part. 
